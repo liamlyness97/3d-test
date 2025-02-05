@@ -6,6 +6,7 @@
 	import TestScene from '$lib/Scenes/TestScene.svelte';
 	import { Studio } from '@threlte/studio';
 	import { partColours } from '$lib/PartColours.svelte';
+	import { fly, slide } from 'svelte/transition';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -36,7 +37,7 @@
 				>
 				<button
 					onclick={() => (tab = 'parts')}
-					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 hover:bg-blue-600 hover:text-white {tab ===
+					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white {tab ===
 					'parts'
 						? 'bg-blue-600 text-white'
 						: 'bg-white text-slate-900'}">Change Part Colours</button
@@ -44,54 +45,58 @@
 			</div>
 		</div>
 		{#if tab === 'camera'}
-			<div class="mt-5 flex flex-col">
+			<div
+				in:fly={{ x: -20, duration: 400, delay: 300 }}
+				out:fly={{ x: 20, duration: 100 }}
+				class="mt-5 flex flex-col"
+			>
 				<div
-					class="mt-3 flex flex-col gap-2 [&>button]:rounded-sm [&>button]:py-1.5 [&>button]:font-medium"
+					class="mt-3 flex flex-col gap-4 [&>button]:rounded-sm [&>button]:py-3 [&>button]:font-medium"
 				>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(-0.75, 1, 0, true);
 							controls?.setTarget(1.5, 1, 1, true);
 						}}>Seat</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(1, 0.75, -0.75, true);
 							controls?.setTarget(0, 0.25, -0.5, true);
 						}}>Front Wheel</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(-1, 0.5, 0.85, true);
 							controls?.setTarget(0, 0.2, 0.45, true);
 						}}>Back Wheel</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(1, 1.1, -0.85, true);
 							controls?.setTarget(0, 1, -0.25, true);
 						}}>Handle Bars</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(1, 1.1, 0.85, true);
 							controls?.setTarget(0, 0, 0.25, true);
 						}}>Peddle</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(0.5, 0.75, -0.2, true);
 							controls?.setTarget(0, 0, 0.25, true);
 						}}>Crank</button
 					>
 					<button
-						class="w-full self-start bg-white text-lg text-slate-900"
+						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
 						onclick={() => {
 							controls?.setPosition(1.8, 0.5, 0, true);
 							controls?.setTarget(0, 0.5, 0, true);
@@ -101,7 +106,11 @@
 			</div>
 		{/if}
 		{#if tab === 'parts'}
-			<div class="mt-5 flex flex-col">
+			<div
+				in:fly={{ x: -20, duration: 400, delay: 300 }}
+				out:fly={{ x: 20, duration: 100 }}
+				class="mt-5 flex flex-col"
+			>
 				<div class="flex flex-col gap-3">
 					<div class="flex flex-col">
 						<p class="text-lg font-medium text-white">Frame</p>

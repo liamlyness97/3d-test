@@ -7,6 +7,7 @@
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
 	import CameraControls from '$lib/CameraControls';
+	import Bike from '$lib/models/bike.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -65,7 +66,7 @@
 	scale={1}
 	position={[0, 0, 0]}
 >
-	<Bicycle />
+	<Bike />
 	<T.Mesh receiveShadow position.y={-0.007}>
 		<T.BoxGeometry args={[50, 0.01, 50]} />
 		<T.MeshStandardMaterial color="#ff6d00" />

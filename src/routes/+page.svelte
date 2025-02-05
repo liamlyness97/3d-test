@@ -28,17 +28,13 @@
 						controls?.setPosition(1.8, 0.5, 0, true);
 						controls?.setTarget(0, 0.5, 0, true);
 					}}
-					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white {tab ==
-					'camera'
-						? 'bg-blue-600 text-white'
-						: 'bg-white text-slate-900'}">Camera Movement</button
+					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
+					>Camera Movement</button
 				>
 				<button
 					onclick={() => (tab = 'parts')}
-					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white {tab ==
-					'parts'
-						? 'bg-blue-600 text-white'
-						: 'bg-white text-slate-900'}">Change Part Colours</button
+					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
+					>Change Part Colours</button
 				>
 			</div>
 		</div>

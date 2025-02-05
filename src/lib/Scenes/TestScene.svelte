@@ -1,14 +1,12 @@
 <script lang="ts">
-	import Bicycle from '$lib/models/Bicycle.svelte';
 	import { T, useLoader, useTask, useThrelte } from '@threlte/core';
-	import { Environment, OrbitControls } from '@threlte/extras';
+	import { Environment } from '@threlte/extras';
 	import { EquirectangularReflectionMapping, PerspectiveCamera } from 'three';
 	import { RGBELoader } from 'three/examples/jsm/Addons.js';
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
 	import CameraControls from '$lib/CameraControls';
 	import Bike from '$lib/models/Bike.svelte';
-	import { partColours } from '$lib/PartColours.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -39,7 +37,7 @@
 		};
 	});
 
-	// Camera settings
+	// Init Camera settings
 	controls?.setPosition(11, 5, 0);
 	controls?.zoom(0);
 	controls?.setOrbitPoint(0, 0, 0);

@@ -2,11 +2,9 @@
 	import { Canvas } from '@threlte/core';
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
-	import { DEG2RAD } from 'three/src/math/MathUtils.js';
 	import TestScene from '$lib/Scenes/TestScene.svelte';
-	import { Studio } from '@threlte/studio';
 	import { partColours } from '$lib/PartColours.svelte';
-	import { fly, slide } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();

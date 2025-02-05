@@ -5,7 +5,7 @@ Command: npx @threlte/gltf@3.0.0 bike.gltf
 
 <script>
 	import { partColours } from '$lib/PartColours.svelte';
-	import { observe, T, useTask, useThrelte } from '@threlte/core';
+	import { T } from '@threlte/core';
 	import { useGltf } from '@threlte/extras';
 
 	let { fallback, error, children, ref = $bindable(), ...props } = $props();

@@ -7,7 +7,8 @@
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
 	import CameraControls from '$lib/CameraControls';
-	import Bike from '$lib/models/bike.svelte';
+	import Bike from '$lib/models/Bike.svelte';
+	import { partColours } from '$lib/PartColours.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);

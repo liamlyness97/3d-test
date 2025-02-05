@@ -4,42 +4,11 @@ Command: npx @threlte/gltf@3.0.0 bike.gltf
 -->
 
 <script>
-	import { T } from '@threlte/core';
+	import { partColours } from '$lib/PartColours.svelte';
+	import { observe, T, useTask, useThrelte } from '@threlte/core';
 	import { useGltf } from '@threlte/extras';
 
 	let { fallback, error, children, ref = $bindable(), ...props } = $props();
-
-	let partColours = $state({
-		frame: 'hsl(201, 97%, 28%)',
-		forks: 'hsl(201, 97%, 28%)',
-		nuts: '#171717',
-		axel: 'e0e0e0',
-		tire: '#171717',
-		barWrap: '#691c07',
-		handleBar: '#e0e0e0',
-		frontRim: '#e0e0e0',
-		frontSpokes: '#171717',
-		backSpokes: '#171717',
-		frontSpokeJoint: 'hsl(201, 97%, 28%)',
-		backSpokeJoint: 'hsl(201, 97%, 28%)',
-		frontHub: 'hsl(201, 97%, 28%)',
-		backHub: 'hsl(201, 97%, 28%)',
-		crankSet: 'hsl(201, 97%, 28%)',
-		pedals: '#141414',
-		stem: 'hsl(201, 97%, 28%)',
-		barSpacers: '#171717',
-		stemBolts: '#171717',
-		headSet: 'hsl(201, 97%, 28%)',
-		stemCap: '#171717',
-		saddleRails: '#e0e0e0',
-		seatClamp: 'hsl(201, 97%, 28%)',
-		seatPost: '#171717',
-		seatPostClamp: 'hsl(201, 97%, 28%)',
-		crankOuter: '#171717',
-		crankInner: 'hsl(201, 97%, 28%)',
-		chain: '#171717',
-		rearCrank: '#e0e0e0'
-	});
 
 	const gltf = useGltf('/new/with-textures/bike.gltf');
 </script>

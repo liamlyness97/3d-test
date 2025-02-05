@@ -24,7 +24,7 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(svelte@5.19.5)(three@0.172.0)
       '@threlte/extras':
-        specifier: ^9.0.1
+        specifier: 9.0.1
         version: 9.0.1(@types/three@0.172.0)(svelte@5.19.5)(three@0.172.0)
       '@threlte/flex':
         specifier: ^2.0.0

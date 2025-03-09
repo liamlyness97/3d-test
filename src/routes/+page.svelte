@@ -5,296 +5,266 @@
 	import TestScene from '$lib/Scenes/TestScene.svelte';
 	import { partColours } from '$lib/PartColours.svelte';
 	import { fly } from 'svelte/transition';
+	import FrameConfig from '$lib/components/config/FrameConfig.svelte';
+	import ForksConfig from '$lib/components/config/ForksConfig.svelte';
+	import CrankArmsConfig from '$lib/components/config/CrankArmsConfig.svelte';
+	import CrankCogConfig from '$lib/components/config/CrankCogConfig.svelte';
+	import PedalConfig from '$lib/components/config/PedalConfig.svelte';
+	import HubsConfig from '$lib/components/config/HubsConfig.svelte';
+	import RimsConfig from '$lib/components/config/RimsConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
 
 	let enabled = $state(true);
 
-	let tab = $state('camera');
+	let tab = $state('default');
 </script>
 
 <div class="h-screen w-full">
-	<div
-		class="fixed left-10 top-1/2 z-50 h-[90vh] w-1/4 -translate-y-1/2 rounded-md bg-slate-900 bg-opacity-75 p-10"
-	>
-		<div class="flex flex-col gap-5">
-			<h1 class="text-3xl font-medium text-white">Bike 3D Test</h1>
-
-			<div class="flex gap-5">
-				<button
-					onclick={() => {
-						tab = 'camera';
-						controls?.setPosition(1.8, 0.5, 0, true);
-						controls?.setTarget(0, 0.5, 0, true);
-					}}
-					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-					>Camera Movement</button
-				>
-				<button
-					onclick={() => (tab = 'parts')}
-					class="w-full self-start rounded bg-white py-1 text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-					>Change Part Colours</button
-				>
-			</div>
+	<!-- Init Controls -->
+	{#if tab == 'default'}
+		<div
+			in:fly={{ duration: 300, delay: 200, y: 20 }}
+			out:fly={{ duration: 200, y: 20 }}
+			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+		>
+			<button
+				onclick={() => {
+					tab = 'camera';
+					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setTarget(0, 0.5, 0, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera"
+			>
+				<iconify-icon icon="jam:video-camera-f"></iconify-icon>
+			</button>
+			<button
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
+				aria-label="Config"
+				onclick={() => {
+					tab = 'config';
+					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setTarget(0, 0.5, 0, true);
+				}}
+			>
+				<iconify-icon icon="hugeicons:configuration-01"></iconify-icon>
+			</button>
 		</div>
-		{#if tab === 'camera'}
-			<div
-				in:fly={{ x: -20, duration: 400, delay: 300 }}
-				out:fly={{ x: 20, duration: 100 }}
-				class="mt-5 flex flex-col"
+	{/if}
+
+	<!-- Camera Controls -->
+	{#if tab == 'camera'}
+		<div
+			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+			in:fly={{ duration: 300, delay: 200, y: 20 }}
+			out:fly={{ duration: 200, y: 20 }}
+		>
+			<button
+				onclick={() => {
+					tab = 'default';
+					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setTarget(0, 0.5, 0, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Back"
 			>
-				<div
-					class="mt-3 flex flex-col gap-4 [&>button]:rounded-sm [&>button]:py-3 [&>button]:font-medium"
-				>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(-0.75, 1, 0, true);
-							controls?.setTarget(1.5, 1, 1, true);
-						}}>Seat</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(1, 0.75, -0.75, true);
-							controls?.setTarget(0, 0.25, -0.5, true);
-						}}>Front Wheel</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(-1, 0.5, 0.85, true);
-							controls?.setTarget(0, 0.2, 0.45, true);
-						}}>Back Wheel</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(1, 1.1, -0.85, true);
-							controls?.setTarget(0, 1, -0.25, true);
-						}}>Handle Bars</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(1, 1.1, 0.85, true);
-							controls?.setTarget(0, 0, 0.25, true);
-						}}>Peddle</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(0.5, 0.75, -0.2, true);
-							controls?.setTarget(0, 0, 0.25, true);
-						}}>Crank</button
-					>
-					<button
-						class="w-full self-start bg-white text-lg text-slate-900 duration-300 hover:bg-blue-600 hover:text-white"
-						onclick={() => {
-							controls?.setPosition(1.8, 0.5, 0, true);
-							controls?.setTarget(0, 0.5, 0, true);
-						}}>Reset Camera</button
-					>
-				</div>
-			</div>
-		{/if}
-		{#if tab === 'parts'}
-			<div
-				in:fly={{ x: -20, duration: 400, delay: 300 }}
-				out:fly={{ x: 20, duration: 100 }}
-				class="mt-5 flex flex-col"
+				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(-0.75, 1, 0, true);
+					controls?.setTarget(1.5, 1, 1, true);
+				}}
 			>
-				<div class="flex flex-col gap-3">
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Frame</p>
-						<div style={`background: ${partColours.frame}`}>
-							<select
-								name="frame"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(1.8, 0.5, 0, true);
-									controls?.setTarget(0, 0.5, 0, true);
-								}}
-								onchange={(e) => {
-									partColours.frame = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Forks</p>
-						<div style={`background: ${partColours.forks}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(1, 0.75, -0.75, true);
-									controls?.setTarget(0, 0.25, -0.5, true);
-								}}
-								onchange={(e) => {
-									partColours.forks = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Crank Arms</p>
-						<div style={`background: ${partColours.crankSet}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(0.5, 0.75, -0.2, true);
-									controls?.setTarget(0, 0, 0.25, true);
-								}}
-								onchange={(e) => {
-									partColours.crankSet = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Inner Crank</p>
-						<div style={`background: ${partColours.crankInner}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(0.5, 0.75, -0.2, true);
-									controls?.setTarget(0, 0, 0.25, true);
-								}}
-								onchange={(e) => {
-									partColours.crankInner = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Outer Crank</p>
-						<div style={`background: ${partColours.crankOuter}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(0.5, 0.75, -0.2, true);
-									controls?.setTarget(0, 0, 0.25, true);
-								}}
-								onchange={(e) => {
-									partColours.crankOuter = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Pedals</p>
-						<div style={`background: ${partColours.pedals}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(0.5, 0.75, -0.2, true);
-									controls?.setTarget(0, 0, 0.25, true);
-								}}
-								onchange={(e) => {
-									partColours.pedals = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Wheel Hubs</p>
-						<div style={`background: ${partColours.frontHub}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(1, 0.75, -0.75, true);
-									controls?.setTarget(0, 0.25, -0.5, true);
-								}}
-								onchange={(e) => {
-									partColours.frontHub = e.target.value;
-									partColours.backHub = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-					<div class="flex flex-col">
-						<p class="text-lg font-medium text-white">Wheel Rims</p>
-						<div style={`background: ${partColours.frontRim}`}>
-							<select
-								name="forks"
-								class=" h-full w-full bg-transparent p-2 text-white"
-								onclick={() => {
-									controls?.setPosition(1, 0.75, -0.75, true);
-									controls?.setTarget(0, 0.25, -0.5, true);
-								}}
-								onchange={(e) => {
-									partColours.frontRim = e.target.value;
-								}}
-							>
-								<option></option>
-								<option class="text-slate-900" value="#025c8d">Blue</option>
-								<option class="text-slate-900" value="#560606">Red</option>
-								<option class="text-slate-900" value="#033a1d">Green</option>
-								<option class="text-slate-900" value="#b2391b">Orange</option>
-								<option class="text-slate-900" value="#151619">Black</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-		{/if}
-	</div>
+				Seat
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(1, 0.75, -0.75, true);
+					controls?.setTarget(0, 0.25, -0.5, true);
+				}}
+			>
+				Front Wheel
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(-1, 0.5, 0.85, true);
+					controls?.setTarget(0, 0.2, 0.45, true);
+				}}
+			>
+				Back Wheel
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(1, 1.1, -0.85, true);
+					controls?.setTarget(0, 1, -0.25, true);
+				}}
+				>Handle Bars
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(1, 1.1, 0.85, true);
+					controls?.setTarget(0, 0, 0.25, true);
+				}}
+				>Peddle
+			</button>
+			<button
+				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Camera Control"
+				onclick={() => {
+					controls?.setPosition(0.5, 0.75, -0.2, true);
+					controls?.setTarget(0, 0, 0.25, true);
+				}}
+				>Crank
+			</button>
+		</div>
+	{/if}
+
+	<!-- Bike Config Icons -->
+	{#if tab == 'config'}
+		<div
+			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+			in:fly={{ duration: 300, delay: 200, y: 20 }}
+			out:fly={{ duration: 200, y: 20 }}
+		>
+			<button
+				onclick={() => {
+					tab = 'default';
+					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setTarget(0, 0.5, 0, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Back"
+			>
+				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
+			</button>
+			<button
+				onclick={() => {
+					tab = 'frameConfig';
+					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setTarget(0, 0.5, 0, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Frame"
+			>
+				<img class="h-4 w-4" src="/icons/frame.svg" alt="Frame Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'forksConfig';
+					controls?.setPosition(1, 0.75, -0.75, true);
+					controls?.setTarget(0, 0.25, -0.5, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Forks"
+			>
+				<img class="h-4 w-4" src="/icons/forks.svg" alt="Forks Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'crankArmConfig';
+					controls?.setPosition(0.5, 0.75, -0.2, true);
+					controls?.setTarget(0, 0, 0.25, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Crank Arm"
+			>
+				<img class="h-4 w-4" src="/icons/crank.svg" alt="Crank Arms Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'crankCogConfig';
+					controls?.setPosition(0.5, 0.75, -0.2, true);
+					controls?.setTarget(0, 0, 0.25, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Crank"
+			>
+				<img class="h-4 w-4" src="/icons/cog.svg" alt="Crank Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'pedalConfig';
+					controls?.setPosition(1, 1.1, 0.85, true);
+					controls?.setTarget(0, 0, 0.25, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Pedal"
+			>
+				<img class="h-4 w-4" src="/icons/pedal.svg" alt="Pedal Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'hubsConfig';
+					controls?.setPosition(1, 0.75, -0.75, true);
+					controls?.setTarget(0, 0.25, -0.5, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Hub"
+			>
+				<img class="h-4 w-4" src="/icons/hub.svg" alt="Hub Icon" />
+			</button>
+			<button
+				onclick={() => {
+					tab = 'rimsConfig';
+					controls?.setPosition(-1, 0.5, 0.85, true);
+					controls?.setTarget(0, 0.2, 0.45, true);
+				}}
+				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				aria-label="Wheel"
+			>
+				<img class="h-6 w-6" src="/icons/wheel.svg" alt="Wheel Icon" />
+			</button>
+		</div>
+	{/if}
+
+	<!-- Frame Config -->
+	{#if tab == 'frameConfig'}
+		<FrameConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Forks Config -->
+	{#if tab == 'forksConfig'}
+		<ForksConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Crank Arms Config -->
+	{#if tab == 'crankArmConfig'}
+		<CrankArmsConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Crank Cog Config -->
+	{#if tab == 'crankCogConfig'}
+		<CrankCogConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Pedal Config -->
+	{#if tab == 'pedalConfig'}
+		<PedalConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Hubs Config -->
+	{#if tab == 'hubsConfig'}
+		<HubsConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Rims Config -->
+	{#if tab == 'rimsConfig'}
+		<RimsConfig bind:tab bind:controls />
+	{/if}
+
 	<Canvas>
 		<TestScene bind:controls bind:mesh />
 	</Canvas>

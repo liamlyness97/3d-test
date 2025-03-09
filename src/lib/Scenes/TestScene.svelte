@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { T, useLoader, useTask, useThrelte } from '@threlte/core';
-	import { Environment } from '@threlte/extras';
-	import { EquirectangularReflectionMapping, PerspectiveCamera } from 'three';
+	import { Environment, useTexture } from '@threlte/extras';
+	import { EquirectangularReflectionMapping, PerspectiveCamera, RepeatWrapping } from 'three';
 	import { RGBELoader } from 'three/examples/jsm/Addons.js';
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
 	import CameraControls from '$lib/CameraControls';
 	import Bike from '$lib/models/Bike.svelte';
+	import { metalness } from 'three/tsl';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -16,6 +17,23 @@
 			return texture;
 		}
 	});
+
+	const floor = useTexture(
+		{
+			map: '/floor/texture.jpg',
+			normalMap: '/floor/normal.png',
+			metalnessMap: '/floor/metallic.jpg',
+			aoMap: '/floor/occlusion.jpg'
+		},
+		{
+			transform: (texture) => {
+				texture.wrapS = RepeatWrapping;
+				texture.wrapT = RepeatWrapping;
+				texture.repeat.set(10, 10);
+				return texture;
+			}
+		}
+	);
 
 	let {
 		controls = $bindable(),
@@ -66,12 +84,15 @@
 	position={[0, 0, 0]}
 >
 	<Bike />
-	<T.Mesh receiveShadow position.y={-0.007}>
-		<T.BoxGeometry args={[50, 0.01, 50]} />
-		<T.MeshStandardMaterial color="#ff6d00" />
-	</T.Mesh>
+
+	{#if $floor}
+		<T.Mesh receiveShadow position.y={-0.007}>
+			<T.BoxGeometry args={[50, 0.01, 50]} />
+			<T.MeshStandardMaterial {...$floor} roughness={1} metalness={0.3} />
+		</T.Mesh>
+	{/if}
 </T.Group>
 
 {#await map then texture}
-	<Environment isBackground {texture} />
+	<Environment {texture} />
 {/await}

@@ -35,13 +35,13 @@
 					controls?.setPosition(1.8, 0.5, 0, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera"
 			>
 				<iconify-icon icon="jam:video-camera-f"></iconify-icon>
 			</button>
 			<button
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
 				aria-label="Config"
 				onclick={() => {
 					tab = 'config';
@@ -67,13 +67,13 @@
 					controls?.setPosition(1.8, 0.5, 0, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Back"
 			>
 				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(-0.75, 1, 0, true);
@@ -83,7 +83,7 @@
 				Seat
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(1, 0.75, -0.75, true);
@@ -93,7 +93,7 @@
 				Front Wheel
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(-1, 0.5, 0.85, true);
@@ -103,7 +103,7 @@
 				Back Wheel
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(1, 1.1, -0.85, true);
@@ -112,7 +112,7 @@
 				>Handle Bars
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(1, 1.1, 0.85, true);
@@ -121,7 +121,7 @@
 				>Peddle
 			</button>
 			<button
-				class="flex h-8 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
 					controls?.setPosition(0.5, 0.75, -0.2, true);
@@ -145,7 +145,7 @@
 					controls?.setPosition(1.8, 0.5, 0, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Back"
 			>
 				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
@@ -156,10 +156,10 @@
 					controls?.setPosition(1.8, 0.5, 0, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Frame"
 			>
-				<img class="h-4 w-4" src="/icons/frame.svg" alt="Frame Icon" />
+				<img class="h-5 w-5" src="/icons/frame.svg" alt="Frame Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -167,10 +167,10 @@
 					controls?.setPosition(1, 0.75, -0.75, true);
 					controls?.setTarget(0, 0.25, -0.5, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Forks"
 			>
-				<img class="h-4 w-4" src="/icons/forks.svg" alt="Forks Icon" />
+				<img class="h-5 w-5" src="/icons/forks.svg" alt="Forks Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -178,10 +178,10 @@
 					controls?.setPosition(0.5, 0.75, -0.2, true);
 					controls?.setTarget(0, 0, 0.25, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Crank Arm"
 			>
-				<img class="h-4 w-4" src="/icons/crank.svg" alt="Crank Arms Icon" />
+				<img class="h-5 w-5" src="/icons/crank.svg" alt="Crank Arms Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -189,10 +189,10 @@
 					controls?.setPosition(0.5, 0.75, -0.2, true);
 					controls?.setTarget(0, 0, 0.25, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Crank"
 			>
-				<img class="h-4 w-4" src="/icons/cog.svg" alt="Crank Icon" />
+				<img class="h-5 w-5" src="/icons/cog.svg" alt="Crank Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -200,10 +200,10 @@
 					controls?.setPosition(1, 1.1, 0.85, true);
 					controls?.setTarget(0, 0, 0.25, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Pedal"
 			>
-				<img class="h-4 w-4" src="/icons/pedal.svg" alt="Pedal Icon" />
+				<img class="h-5 w-5" src="/icons/pedal.svg" alt="Pedal Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -211,10 +211,10 @@
 					controls?.setPosition(1, 0.75, -0.75, true);
 					controls?.setTarget(0, 0.25, -0.5, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Hub"
 			>
-				<img class="h-4 w-4" src="/icons/hub.svg" alt="Hub Icon" />
+				<img class="h-5 w-5" src="/icons/hub.svg" alt="Hub Icon" />
 			</button>
 			<button
 				onclick={() => {
@@ -222,10 +222,10 @@
 					controls?.setPosition(-1, 0.5, 0.85, true);
 					controls?.setTarget(0, 0.2, 0.45, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Wheel"
 			>
-				<img class="h-6 w-6" src="/icons/wheel.svg" alt="Wheel Icon" />
+				<img class="h-7 w-7" src="/icons/wheel.svg" alt="Wheel Icon" />
 			</button>
 		</div>
 	{/if}

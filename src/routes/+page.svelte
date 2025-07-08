@@ -12,6 +12,7 @@
 	import PedalConfig from '$lib/components/config/PedalConfig.svelte';
 	import HubsConfig from '$lib/components/config/HubsConfig.svelte';
 	import RimsConfig from '$lib/components/config/RimsConfig.svelte';
+	import LugsConfig from '$lib/components/config/LugsConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -156,10 +157,10 @@
 					controls?.setPosition(1.8, 0.5, 0, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Frame"
 			>
-				<img class="h-4 w-4" src="/icons/frame.svg" alt="Frame Icon" />
+				Frame
 			</button>
 			<button
 				onclick={() => {
@@ -167,12 +168,23 @@
 					controls?.setPosition(1, 0.75, -0.75, true);
 					controls?.setTarget(0, 0.25, -0.5, true);
 				}}
-				class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Forks"
 			>
-				<img class="h-4 w-4" src="/icons/forks.svg" alt="Forks Icon" />
+				Forks
 			</button>
 			<button
+				onclick={() => {
+					tab = 'lugsConfig';
+					controls?.setPosition(-0.2, 0.9, -0.9, true);
+					controls?.setTarget(0.2, 0.3, 0.5, true);
+				}}
+				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				aria-label="Lugs"
+			>
+				Lugs
+			</button>
+			<!-- <button
 				onclick={() => {
 					tab = 'crankArmConfig';
 					controls?.setPosition(0.5, 0.75, -0.2, true);
@@ -182,8 +194,8 @@
 				aria-label="Crank Arm"
 			>
 				<img class="h-4 w-4" src="/icons/crank.svg" alt="Crank Arms Icon" />
-			</button>
-			<button
+			</button> -->
+			<!-- <button
 				onclick={() => {
 					tab = 'crankCogConfig';
 					controls?.setPosition(0.5, 0.75, -0.2, true);
@@ -193,8 +205,8 @@
 				aria-label="Crank"
 			>
 				<img class="h-4 w-4" src="/icons/cog.svg" alt="Crank Icon" />
-			</button>
-			<button
+			</button> -->
+			<!-- <button
 				onclick={() => {
 					tab = 'pedalConfig';
 					controls?.setPosition(1, 1.1, 0.85, true);
@@ -204,8 +216,8 @@
 				aria-label="Pedal"
 			>
 				<img class="h-4 w-4" src="/icons/pedal.svg" alt="Pedal Icon" />
-			</button>
-			<button
+			</button> -->
+			<!-- <button
 				onclick={() => {
 					tab = 'hubsConfig';
 					controls?.setPosition(1, 0.75, -0.75, true);
@@ -215,8 +227,8 @@
 				aria-label="Hub"
 			>
 				<img class="h-4 w-4" src="/icons/hub.svg" alt="Hub Icon" />
-			</button>
-			<button
+			</button> -->
+			<!-- <button
 				onclick={() => {
 					tab = 'rimsConfig';
 					controls?.setPosition(-1, 0.5, 0.85, true);
@@ -226,7 +238,7 @@
 				aria-label="Wheel"
 			>
 				<img class="h-6 w-6" src="/icons/wheel.svg" alt="Wheel Icon" />
-			</button>
+			</button> -->
 		</div>
 	{/if}
 
@@ -238,6 +250,11 @@
 	<!-- Forks Config -->
 	{#if tab == 'forksConfig'}
 		<ForksConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Lugs Config -->
+	{#if tab == 'lugsConfig'}
+		<LugsConfig bind:tab bind:controls />
 	{/if}
 
 	<!-- Crank Arms Config -->

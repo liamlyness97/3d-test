@@ -25,20 +25,10 @@
 	</button>
 	<button
 		onclick={() => {
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<img class="h-4 w-4" src="/icons/frame.svg" alt="Frame Icon" />
-	</button>
-	<button
-		onclick={() => {
 			partColours.frame = '#025c8d';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -50,7 +40,7 @@
 			partColours.frame = '#560606';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -62,7 +52,7 @@
 			partColours.frame = '#033a1d';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -74,7 +64,7 @@
 			partColours.frame = '#b2391b';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -86,7 +76,7 @@
 			partColours.frame = '#d56c7a';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -98,7 +88,7 @@
 			partColours.frame = '#151619';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			tab = 'frameConfig';
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"

@@ -8,6 +8,7 @@
 	import CameraControls from '$lib/CameraControls';
 	import Bike from '$lib/models/Bike.svelte';
 	import { metalness } from 'three/tsl';
+	import LuggedFrame from '$lib/models/mercian/LuggedFrame.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -83,7 +84,7 @@
 	scale={1}
 	position={[0, 0, 0]}
 >
-	<Bike />
+	<LuggedFrame />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>

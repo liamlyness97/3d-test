@@ -20,6 +20,24 @@
 	let enabled = $state(true);
 
 	let tab = $state('default');
+
+	let { data } = $props();
+
+	if (data.frameCol) {
+		if (data.frameCol == 'blue') {
+			partColours.frame = '#025c8d';
+		} else if (data.frameCol === 'green') {
+			partColours.frame = '#033a1d';
+		} else if (data.frameCol === 'red') {
+			partColours.frame = '#560606';
+		} else if (data.frameCol === 'orange') {
+			partColours.frame = '#b2391b';
+		} else if (data.frameCol === 'pink') {
+			partColours.frame = '#d56c7a';
+		} else if (data.frameCol === 'black') {
+			partColours.frame = '#151619';
+		}
+	}
 </script>
 
 <div class="h-screen w-full">

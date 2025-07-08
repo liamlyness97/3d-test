@@ -27,5 +27,6 @@ export const partColours = $state({
     crankOuter: '#171717',
     crankInner: 'hsl(201, 97%, 28%)',
     chain: '#171717',
-    rearCrank: '#e0e0e0'
+    rearCrank: '#e0e0e0',
+    lugs: '#560606'
 });

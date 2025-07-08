@@ -1,4 +1,4 @@
 {
 	"installCommand": "pnpm install",
-	"buildCommand": "git lfs install && git lfs pull && pnpm build"
+	"buildCommand": "git lfs pull && pnpm build"
 }

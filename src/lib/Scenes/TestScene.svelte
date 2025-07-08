@@ -62,6 +62,9 @@
 	controls?.setOrbitPoint(0, 0, 0);
 	controls?.dolly(-2.5);
 	controls?.truck(-0.3, -0.15);
+	controls.maxPolarAngle = Math.PI / 2;
+	controls.maxDistance = 5;
+	controls.minDistance = 1;
 
 	useTask(
 		(delta) => {
@@ -89,7 +92,7 @@
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>
 			<T.BoxGeometry args={[50, 0.01, 50]} />
-			<T.MeshStandardMaterial {...$floor} roughness={1} metalness={0.3} />
+			<T.MeshStandardMaterial {...$floor} roughness={0.7} metalness={0.4} />
 		</T.Mesh>
 	{/if}
 </T.Group>

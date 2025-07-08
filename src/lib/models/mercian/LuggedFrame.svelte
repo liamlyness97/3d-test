@@ -18,7 +18,7 @@ Command: npx @threlte/gltf@3.0.1 static/mercian-models/lugged4.glb -s
 	{#await gltf}
 		{@render fallback?.()}
 	{:then gltf}
-		<T.Group position={[0.0, 0.58, 0.1]} rotation={[Math.PI / 1.95, 0, -1.55]} scale={0.01}>
+		<T.Group position={[0.0, 0.54, 0.1]} rotation={[Math.PI / 2, 0, -1.55]} scale={0.01}>
 			<!-- Forks -->
 			<T.Group position={[14.65, 0.3, 15.04]}>
 				<T.Mesh

@@ -22,7 +22,9 @@
 	let enabled = $state(true);
 
 	let tab = $state('default');
+
 	let shareUrl = $state('');
+	let copied = $state(false);
 
 	let { data } = $props();
 
@@ -48,6 +50,11 @@
 		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&lugs=${lugs}&logo=${logo}`;
 
 		navigator.clipboard.writeText(shareUrl);
+		copied = true;
+
+		setTimeout(() => {
+			copied = false;
+		}, 5000);
 	}
 </script>
 
@@ -58,8 +65,23 @@
 			<p class="text-[#0E1E3E]"><strong>Pro Lugged 44</strong> Core package</p>
 			<p class="text-[#0E1E3E]">£4854</p>
 		</div>
-		<div>
-			<button onclick={shareSetup} class="text-[#0E1E3E]"><strong>Share</strong></button>
+		<div class="relative flex w-[10rem] justify-end">
+			{#if !copied}
+				<button
+					in:fly={{ x: 50, duration: 300, delay: 200 }}
+					out:fly={{ x: 50, duration: 200 }}
+					onclick={shareSetup}
+					class="absolute text-[#0E1E3E]"><strong>Share</strong></button
+				>
+			{:else}
+				<p
+					in:fly={{ x: 50, duration: 300, delay: 200 }}
+					out:fly={{ x: 50, duration: 200 }}
+					class="absolute text-[#0E1E3E]"
+				>
+					<strong>Copied to clipboard</strong>
+				</p>
+			{/if}
 		</div>
 	</div>
 

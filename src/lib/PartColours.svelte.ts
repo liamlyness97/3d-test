@@ -31,3 +31,23 @@ export const partColours = $state({
     rearCrank: '#e0e0e0',
     lugs: '#560606'
 });
+
+export const colourMap = $state({
+    blue: '#025c8d',
+    green: '#033a1d',
+    red: '#560606',
+    orange: '#b2391b',
+    pink: '#d56c7a',
+    black: '#151619',
+    white: '#ffffff'
+})
+
+export const hexToColourName = $state({
+    '#025c8d': 'blue',
+    '#033a1d': 'green',
+    '#560606': 'red',
+    '#b2391b': 'orange',
+    '#d56c7a': 'pink',
+    '#151619': 'black',
+    '#ffffff': 'white'
+});

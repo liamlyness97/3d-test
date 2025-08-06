@@ -3,7 +3,7 @@
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
 	import TestScene from '$lib/Scenes/TestScene.svelte';
-	import { partColours } from '$lib/PartColours.svelte';
+	import { colourMap, partColours, hexToColourName } from '$lib/PartColours.svelte';
 	import { fly } from 'svelte/transition';
 	import FrameConfig from '$lib/components/config/FrameConfig.svelte';
 	import ForksConfig from '$lib/components/config/ForksConfig.svelte';
@@ -14,6 +14,7 @@
 	import RimsConfig from '$lib/components/config/RimsConfig.svelte';
 	import LugsConfig from '$lib/components/config/LugsConfig.svelte';
 	import LogoConfig from '$lib/components/config/LogoConfig.svelte';
+	import { page } from '$app/state';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -21,26 +22,36 @@
 	let enabled = $state(true);
 
 	let tab = $state('default');
+	let shareUrl = $state('');
 
 	let { data } = $props();
 
-	if (data.frameCol) {
-		if (data.frameCol == 'blue') {
-			partColours.frame = '#025c8d';
-		} else if (data.frameCol === 'green') {
-			partColours.frame = '#033a1d';
-		} else if (data.frameCol === 'red') {
-			partColours.frame = '#560606';
-		} else if (data.frameCol === 'orange') {
-			partColours.frame = '#b2391b';
-		} else if (data.frameCol === 'pink') {
-			partColours.frame = '#d56c7a';
-		} else if (data.frameCol === 'black') {
-			partColours.frame = '#151619';
-		}
+	if (data.frameCol && colourMap[data.frameCol]) {
+		partColours.frame = colourMap[data.frameCol];
+	}
+	if (data.forksCol && colourMap[data.forksCol]) {
+		partColours.forks = colourMap[data.forksCol];
+	}
+	if (data.lugsCol && colourMap[data.lugsCol]) {
+		partColours.lugs = colourMap[data.lugsCol];
+	}
+	if (data.logoCol && colourMap[data.logoCol]) {
+		partColours.logo = colourMap[data.logoCol];
+	}
+
+	function shareSetup() {
+		const frame = hexToColourName[partColours.frame];
+		const forks = hexToColourName[partColours.forks];
+		const lugs = hexToColourName[partColours.lugs];
+		const logo = hexToColourName[partColours.logo];
+
+		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&lugs=${lugs}&logo=${logo}`;
+
+		navigator.clipboard.writeText(shareUrl);
 	}
 </script>
 
+<input type="text" id="share" class="hidden" bind:value={shareUrl} />
 <div class="h-screen w-full">
 	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
 		<div>
@@ -48,7 +59,7 @@
 			<p class="text-[#0E1E3E]">£4854</p>
 		</div>
 		<div>
-			<p class="text-[#0E1E3E]"><strong>Share</strong></p>
+			<button onclick={shareSetup} class="text-[#0E1E3E]"><strong>Share</strong></button>
 		</div>
 	</div>
 

@@ -42,6 +42,16 @@
 </script>
 
 <div class="h-screen w-full">
+	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
+		<div>
+			<p class="text-[#0E1E3E]"><strong>Pro Lugged 44</strong> Core package</p>
+			<p class="text-[#0E1E3E]">£4854</p>
+		</div>
+		<div>
+			<p class="text-[#0E1E3E]"><strong>Share</strong></p>
+		</div>
+	</div>
+
 	<!-- Init Controls -->
 	{#if tab == 'default'}
 		<div

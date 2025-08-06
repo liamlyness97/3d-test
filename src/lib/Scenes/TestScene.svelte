@@ -79,7 +79,7 @@
 
 <T is={camera} makeDefault />
 
-<T.DirectionalLight position={[15, 10, 10]} castShadow />
+<T.DirectionalLight position={[10, 0.1, 0.1]} castShadow />
 
 <T.Group
 	oncreate={(ref) => {
@@ -93,7 +93,7 @@
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>
 			<T.BoxGeometry args={[50, 0.01, 50]} />
-			<T.MeshStandardMaterial {...$floor} roughness={0.7} metalness={0.4} />
+			<T.MeshStandardMaterial color={'#ffffff'} roughness={0.8} metalness={0.346457} />
 		</T.Mesh>
 	{/if}
 </T.Group>

@@ -77,7 +77,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugged-logo-2.glb --dra
 			material={gltf.nodes.bottom_bracket001.material}
 		/>
 		<T.Mesh geometry={gltf.nodes.down_tube002.geometry} material={gltf.nodes.down_tube002.material}>
-			<T.MeshStandardMaterial color={partColours.forks} roughness={0.036491} metalness={0.346457} />
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Extrude003.geometry}>
 			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />

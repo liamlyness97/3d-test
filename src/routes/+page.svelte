@@ -57,7 +57,7 @@
 		<div
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
-			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 		>
 			<button
 				onclick={() => {
@@ -87,7 +87,7 @@
 	<!-- Camera Controls -->
 	{#if tab == 'camera'}
 		<div
-			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
 		>
@@ -165,7 +165,7 @@
 	<!-- Bike Config Icons -->
 	{#if tab == 'config'}
 		<div
-			class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
 		>
@@ -330,4 +330,18 @@
 	<Canvas>
 		<TestScene bind:controls bind:mesh />
 	</Canvas>
+
+	<div
+		class="fixed bottom-0 left-0 flex w-full items-center justify-between bg-[#FF5100] px-20 py-4"
+	>
+		<div class="flex gap-4 text-xl font-light uppercase tracking-widest text-white">
+			<p>Pick your colour & pay deposit</p>
+			<p>£1,200</p>
+		</div>
+		<div>
+			<button class="border border-white px-4 py-2 text-sm font-light uppercase text-white">
+				Pay To Secure
+			</button>
+		</div>
+	</div>
 </div>

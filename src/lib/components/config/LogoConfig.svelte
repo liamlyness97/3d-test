@@ -8,7 +8,7 @@
 
 <!-- Frame Config -->
 <div
-	class="fixed bottom-10 z-50 flex w-full justify-center gap-4"
+	class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 	in:fly={{ duration: 300, delay: 200, y: 20 }}
 	out:fly={{ duration: 200, y: 20 }}
 >

@@ -1,4 +1,5 @@
 export const partColours = $state({
+    logo: '#ffffff',
     frame: 'hsl(201, 97%, 28%)',
     forks: 'hsl(201, 97%, 28%)',
     nuts: '#171717',

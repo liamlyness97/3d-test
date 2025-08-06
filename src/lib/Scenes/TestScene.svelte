@@ -9,6 +9,7 @@
 	import Bike from '$lib/models/Bike.svelte';
 	import { metalness } from 'three/tsl';
 	import LuggedFrame from '$lib/models/mercian/LuggedFrame.svelte';
+	import FrameWithLogo from '$lib/models/mercian/FrameWithLogo.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -57,11 +58,11 @@
 	});
 
 	// Init Camera settings
-	controls?.setPosition(11, 5, 0);
+	controls?.setPosition(0, 5, 15);
 	controls?.zoom(0);
 	controls?.setOrbitPoint(0, 0, 0);
-	controls?.dolly(-2.5);
-	controls?.truck(-0.3, -0.15);
+	controls?.dolly(-2);
+	controls?.truck(0, -0.2);
 	controls.maxPolarAngle = Math.PI / 2;
 	controls.maxDistance = 5;
 	controls.minDistance = 1;
@@ -87,7 +88,7 @@
 	scale={1}
 	position={[0, 0, 0]}
 >
-	<LuggedFrame />
+	<FrameWithLogo />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>

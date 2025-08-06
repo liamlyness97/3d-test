@@ -13,6 +13,7 @@
 	import HubsConfig from '$lib/components/config/HubsConfig.svelte';
 	import RimsConfig from '$lib/components/config/RimsConfig.svelte';
 	import LugsConfig from '$lib/components/config/LugsConfig.svelte';
+	import LogoConfig from '$lib/components/config/LogoConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -51,7 +52,7 @@
 			<button
 				onclick={() => {
 					tab = 'camera';
-					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
 				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
@@ -64,7 +65,7 @@
 				aria-label="Config"
 				onclick={() => {
 					tab = 'config';
-					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
 			>
@@ -83,7 +84,7 @@
 			<button
 				onclick={() => {
 					tab = 'default';
-					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
 				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -95,8 +96,8 @@
 				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
-					controls?.setPosition(-0.75, 1, 0, true);
-					controls?.setTarget(1.5, 1, 1, true);
+					controls?.setPosition(-0.38, 1, -0.25, true);
+					controls?.setTarget(1.2, 1, 1, true);
 				}}
 			>
 				Seat
@@ -105,8 +106,8 @@
 				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera Control"
 				onclick={() => {
-					controls?.setPosition(1, 0.75, -0.75, true);
-					controls?.setTarget(0, 0.25, -0.5, true);
+					controls?.setPosition(0.5, 0.75, -0.6, true);
+					controls?.setTarget(1, 0, 0.6, true);
 				}}
 			>
 				Front Wheel
@@ -161,7 +162,7 @@
 			<button
 				onclick={() => {
 					tab = 'default';
-					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
 				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -172,7 +173,7 @@
 			<button
 				onclick={() => {
 					tab = 'frameConfig';
-					controls?.setPosition(1.8, 0.5, 0, true);
+					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
 				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
@@ -190,6 +191,17 @@
 				aria-label="Forks"
 			>
 				Forks
+			</button>
+			<button
+				onclick={() => {
+					tab = 'logoConfig';
+					controls?.setPosition(0, 0.5, 2, true);
+					controls?.setTarget(0.2, 0.3, 0.5, true);
+				}}
+				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				aria-label="Logo"
+			>
+				Logo
 			</button>
 			<button
 				onclick={() => {
@@ -298,6 +310,11 @@
 	<!-- Rims Config -->
 	{#if tab == 'rimsConfig'}
 		<RimsConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Logo Config -->
+	{#if tab == 'logoConfig'}
+		<LogoConfig bind:tab bind:controls />
 	{/if}
 
 	<Canvas>

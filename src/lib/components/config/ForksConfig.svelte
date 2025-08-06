@@ -15,8 +15,8 @@
 	<button
 		onclick={() => {
 			tab = 'default';
-			controls?.setPosition(1, 0.75, -0.75, true);
-			controls?.setTarget(0, 0.25, -0.5, true);
+			controls?.setPosition(0, 0.5, 2, true);
+			controls?.setTarget(0, 0.5, 0, true);
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Back"

@@ -15,7 +15,7 @@
 	<button
 		onclick={() => {
 			tab = 'default';
-			controls?.setPosition(1.8, 0.5, 0, true);
+			controls?.setPosition(0, 0.5, 2, true);
 			controls?.setTarget(0, 0.5, 0, true);
 		}}
 		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"

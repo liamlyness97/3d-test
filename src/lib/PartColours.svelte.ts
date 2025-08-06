@@ -1,7 +1,7 @@
 export const partColours = $state({
     logo: '#ffffff',
-    frame: 'hsl(201, 97%, 28%)',
-    forks: 'hsl(201, 97%, 28%)',
+    frame: '#025c8d',
+    forks: '#025c8d',
     nuts: '#171717',
     axel: '#e0e0e0',
     tire: '#171717',

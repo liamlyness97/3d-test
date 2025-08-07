@@ -1,3 +1,12 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@theme {
+	--color-brand-blue: rgba(14, 30, 62, 1);
+	--color-light-blue: rgba(57, 73, 163, 1);
+	--color-offwhite: rgba(254, 252, 239, 1);
+
+	--font-title: 'OpticianSans', sans-serif;
+	--font-body: 'gill-sans-nova', sans-serif;
+}

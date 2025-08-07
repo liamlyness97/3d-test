@@ -10,6 +10,8 @@
 	import { metalness } from 'three/tsl';
 	import LuggedFrame from '$lib/models/mercian/LuggedFrame.svelte';
 	import FrameWithLogo from '$lib/models/mercian/FrameWithLogo.svelte';
+	import LuggedLogoPoll from '$lib/models/mercian/LuggedLogoPoll.svelte';
+	import LuglessFrame from '$lib/models/mercian/LuglessFrame.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -88,7 +90,7 @@
 	scale={1}
 	position={[0, 0, 0]}
 >
-	<FrameWithLogo />
+	<LuglessFrame />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>

@@ -58,7 +58,6 @@
 	}
 </script>
 
-<input type="text" id="share" class="hidden" bind:value={shareUrl} />
 <div class="h-screen w-full">
 	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
 		<div>
@@ -98,7 +97,7 @@
 					controls?.setPosition(0, 0.5, 2, true);
 					controls?.setTarget(0, 0.5, 0, true);
 				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
+				class="xl:flex-r flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera"
 			>
 				<iconify-icon icon="jam:video-camera-f"></iconify-icon>
@@ -369,7 +368,7 @@
 	>
 		<div class="flex gap-4 text-xl font-light uppercase tracking-widest text-white">
 			<p>Pick your colour & pay deposit</p>
-			<p>£1,200</p>
+			<p class="font-body">£1,200</p>
 		</div>
 		<div>
 			<button class="border border-white px-4 py-2 text-sm font-light uppercase text-white">

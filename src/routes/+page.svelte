@@ -60,26 +60,52 @@
 
 <div class="h-screen w-full">
 	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
-		<div>
+		<div class="font-body text-lg">
 			<p class="text-[#0E1E3E]"><strong>Pro Lugged 44</strong> Core package</p>
 			<p class="text-[#0E1E3E]">£4854</p>
 		</div>
-		<div class="relative flex w-[10rem] justify-end">
+		<div class="font-title relative flex w-1/2 justify-end text-xl">
 			{#if !copied}
 				<button
 					in:fly={{ x: 50, duration: 300, delay: 200 }}
 					out:fly={{ x: 50, duration: 200 }}
 					onclick={shareSetup}
-					class="absolute text-[#0E1E3E]"><strong>Share</strong></button
-				>
+					class="absolute flex items-center gap-2 text-[#0E1E3E] duration-200 hover:opacity-75"
+					><strong>Share</strong>
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 16 16"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M13.5 8.35938V9.10938C13.5 11.5842 13.5 12.8216 12.7311 13.5905C11.9623 14.3594 10.7249 14.3594 8.25003 14.3594H6.75003C4.27513 14.3594 3.03769 14.3594 2.26885 13.5905C1.5 12.8216 1.5 11.5842 1.5 9.10938V7.60938C1.5 5.1345 1.5 3.89706 2.26885 3.12822C3.03769 2.35937 4.27513 2.35938 6.75003 2.35938H7.50003"
+							stroke="#0E1E3E"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<path
+							d="M9.75 0.859375H12.75C13.8106 0.859375 14.341 0.859375 14.6705 1.18888C15 1.51839 15 2.04872 15 3.10938V6.10938M14.25 1.60938L7.5 8.35938"
+							stroke="#0E1E3E"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</button>
 			{:else}
-				<p
+				<span
 					in:fly={{ x: 50, duration: 300, delay: 200 }}
 					out:fly={{ x: 50, duration: 200 }}
-					class="absolute text-[#0E1E3E]"
+					class="absolute flex w-full items-center justify-end gap-2 text-[#0E1E3E] duration-200 hover:opacity-75"
 				>
-					<strong>Copied to clipboard</strong>
-				</p>
+					<p class=" text-[#0E1E3E]">
+						<strong>Copied to clipboard</strong>
+					</p>
+					<iconify-icon icon="teenyicons:clipboard-tick-solid"></iconify-icon>
+				</span>
 			{/if}
 		</div>
 	</div>
@@ -364,14 +390,16 @@
 	</Canvas>
 
 	<div
-		class="fixed bottom-0 left-0 flex w-full items-center justify-between bg-[#FF5100] px-20 py-4"
+		class="bg-brandOrange fixed bottom-0 left-0 flex w-full items-center justify-between px-20 py-3"
 	>
-		<div class="flex gap-4 text-xl font-light uppercase tracking-widest text-white">
-			<p>Pick your colour & pay deposit</p>
-			<p class="font-body">£1,200</p>
+		<div class="flex items-center gap-6 text-white">
+			<p class="font-title text-2xl font-normal uppercase tracking-widest">
+				Pick your colour & pay deposit
+			</p>
+			<p class="font-body text-xl">£1,200</p>
 		</div>
 		<div>
-			<button class="border border-white px-4 py-2 text-sm font-light uppercase text-white">
+			<button class="font-title border border-white px-6 py-3 font-light uppercase text-white">
 				Pay To Secure
 			</button>
 		</div>

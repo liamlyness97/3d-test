@@ -2,11 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@theme {
-	--color-brand-blue: rgba(14, 30, 62, 1);
-	--color-light-blue: rgba(57, 73, 163, 1);
-	--color-offwhite: rgba(254, 252, 239, 1);
-
-	--font-title: 'OpticianSans', sans-serif;
-	--font-body: 'gill-sans-nova', sans-serif;
+@font-face {
+	font-family: 'OpticianSans';
+	src: url('/fonts/Optiker-K.eot'); /* IE9 Compat Modes */
+	src:
+		url('/fonts/Optiker-K.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */ url('/fonts/Optiker-K.woff') format('woff'),
+		/* Modern Browsers */ url('/fonts/Optiker-K.ttf') format('truetype'); /* Safari, Android, iOS */
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
 }

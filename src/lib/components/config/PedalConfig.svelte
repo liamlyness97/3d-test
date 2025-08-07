@@ -95,6 +95,18 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.pedals = '#ffffff';
+			controls?.setPosition(1.8, 0.5, 0, true);
+			controls?.setTarget(0, 0.5, 0, true);
+			tab = 'config';
+		}}
+		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
+	>
+		<div class="h-7 w-7 rounded-full bg-[#ffffff]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.pedals = '#151619';
 			controls?.setPosition(1.8, 0.5, 0, true);
 			controls?.setTarget(0, 0.5, 0, true);

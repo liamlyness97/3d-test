@@ -6,7 +6,7 @@
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 </script>
 
-<!-- Crank Arms Config -->
+<!-- Pole Config -->
 <div
 	class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 	in:fly={{ duration: 300, delay: 200, y: 20 }}
@@ -15,8 +15,8 @@
 	<button
 		onclick={() => {
 			tab = 'default';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
+			controls?.setPosition(0.1, 0.7, 1.5, true);
+			controls?.setTarget(0.2, 0.2, -0.9, true);
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Back"
@@ -25,20 +25,10 @@
 	</button>
 	<button
 		onclick={() => {
-			controls?.setPosition(1, 0.75, -0.75, true);
-			controls?.setTarget(0, 0.25, -0.5, true);
-		}}
-		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Crank"
-	>
-		<img class="h-5 w-5" src="/icons/crank.svg" alt="Crank Icon" />
-	</button>
-	<button
-		onclick={() => {
-			partColours.crankSet = '#025c8d';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#025c8d';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -47,10 +37,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#560606';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#560606';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -59,10 +49,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#033a1d';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#033a1d';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -71,10 +61,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#b2391b';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#b2391b';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -83,10 +73,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#d56c7a';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#d56c7a';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -95,10 +85,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#ffffff';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#ffffff';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
@@ -107,10 +97,10 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.crankSet = '#151619';
-			controls?.setPosition(1.8, 0.5, 0, true);
-			controls?.setTarget(0, 0.5, 0, true);
-			tab = 'config';
+			partColours.pole = '#151619';
+			controls?.setPosition(0, 0.9, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'poleConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"

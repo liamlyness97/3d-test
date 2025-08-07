@@ -15,6 +15,7 @@
 	import LugsConfig from '$lib/components/config/LugsConfig.svelte';
 	import LogoConfig from '$lib/components/config/LogoConfig.svelte';
 	import { page } from '$app/state';
+	import PoleConfig from '$lib/components/config/PoleConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -61,7 +62,7 @@
 <div class="h-screen w-full">
 	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
 		<div class="font-body text-lg">
-			<p class="text-[#0E1E3E]"><strong>Pro Lugged 44</strong> Core package</p>
+			<p class="text-[#0E1E3E]"><span class="font-[600]">Pro Lugged 44</span> Core package</p>
 			<p class="text-[#0E1E3E]">£4854</p>
 		</div>
 		<div class="font-title relative flex w-1/2 justify-end text-xl">
@@ -71,7 +72,7 @@
 					out:fly={{ x: 50, duration: 200 }}
 					onclick={shareSetup}
 					class="absolute flex items-center gap-2 text-[#0E1E3E] duration-200 hover:opacity-75"
-					><strong>Share</strong>
+					>Share
 					<svg
 						width="16"
 						height="16"
@@ -101,9 +102,7 @@
 					out:fly={{ x: 50, duration: 200 }}
 					class="absolute flex w-full items-center justify-end gap-2 text-[#0E1E3E] duration-200 hover:opacity-75"
 				>
-					<p class=" text-[#0E1E3E]">
-						<strong>Copied to clipboard</strong>
-					</p>
+					<p class=" mt-1 text-[#0E1E3E]">Share Link Copied</p>
 					<iconify-icon icon="teenyicons:clipboard-tick-solid"></iconify-icon>
 				</span>
 			{/if}
@@ -112,7 +111,7 @@
 
 	<!-- Init Controls -->
 	{#if tab == 'default'}
-		<div
+		<!-- <div
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
 			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
@@ -120,8 +119,8 @@
 			<button
 				onclick={() => {
 					tab = 'camera';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0, 0.5, 0, true);
+					controls?.setPosition(0.1, 0.7, 1.5, true);
+					controls?.setTarget(0.2, 0.2, -0.9, true);
 				}}
 				class="xl:flex-r flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
 				aria-label="Camera"
@@ -133,18 +132,18 @@
 				aria-label="Config"
 				onclick={() => {
 					tab = 'config';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0, 0.5, 0, true);
+					controls?.setPosition(0.1, 0.7, 1.5, true);
+					controls?.setTarget(0.2, 0.2, -0.9, true);
 				}}
 			>
 				<iconify-icon icon="hugeicons:configuration-01"></iconify-icon>
 			</button>
-		</div>
+		</div> -->
 	{/if}
 
 	<!-- Camera Controls -->
 	{#if tab == 'camera'}
-		<div
+		<!-- <div
 			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
@@ -217,17 +216,17 @@
 				}}
 				>Crank
 			</button>
-		</div>
+		</div> -->
 	{/if}
 
 	<!-- Bike Config Icons -->
-	{#if tab == 'config'}
+	{#if tab == 'default'}
 		<div
-			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
+			class="font-title fixed bottom-24 z-50 flex h-10 w-full justify-center gap-4 text-[#0E1E3E]"
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
 		>
-			<button
+			<!-- <button
 				onclick={() => {
 					tab = 'default';
 					controls?.setPosition(0, 0.5, 2, true);
@@ -237,14 +236,14 @@
 				aria-label="Back"
 			>
 				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
-			</button>
+			</button> -->
 			<button
 				onclick={() => {
 					tab = 'frameConfig';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0, 0.5, 0, true);
+					controls?.setPosition(0.1, 0.7, 1.5, true);
+					controls?.setTarget(0.2, 0.2, -0.9, true);
 				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Frame"
 			>
 				Frame
@@ -252,26 +251,37 @@
 			<button
 				onclick={() => {
 					tab = 'forksConfig';
-					controls?.setPosition(1, 0.75, -0.75, true);
-					controls?.setTarget(0, 0.25, -0.5, true);
+					controls?.setPosition(0.8, 0.7, 0.8, true);
+					controls?.setTarget(0.2, 0.2, -0.2, true);
 				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Forks"
 			>
 				Forks
 			</button>
 			<button
 				onclick={() => {
-					tab = 'logoConfig';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0.2, 0.3, 0.5, true);
+					tab = 'poleConfig';
+					controls?.setPosition(0, 0.9, 0.6, true);
+					controls?.setTarget(0.2, 0.2, -0.2, true);
 				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				aria-label="Logo"
+			>
+				Pole
+			</button>
+			<button
+				onclick={() => {
+					tab = 'logoConfig';
+					controls?.setPosition(0.4, 0.8, 0.6, true);
+					controls?.setTarget(0.2, 0.2, -0.3, true);
+				}}
+				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Logo"
 			>
 				Logo
 			</button>
-			<button
+			<!-- <button
 				onclick={() => {
 					tab = 'lugsConfig';
 					controls?.setPosition(-0.2, 0.9, -0.9, true);
@@ -281,7 +291,7 @@
 				aria-label="Lugs"
 			>
 				Lugs
-			</button>
+			</button> -->
 			<!-- <button
 				onclick={() => {
 					tab = 'crankArmConfig';
@@ -383,6 +393,11 @@
 	<!-- Logo Config -->
 	{#if tab == 'logoConfig'}
 		<LogoConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Pole Config -->
+	{#if tab == 'poleConfig'}
+		<PoleConfig bind:tab bind:controls />
 	{/if}
 
 	<Canvas>

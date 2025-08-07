@@ -15,102 +15,260 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-barber-poll.glb
 	const dracoLoader = new DRACOLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
 
-	const gltf = useGltf('/mercian-models/lugless-barber-poll.glb', { dracoLoader: dracoLoader });
+	const gltf = useGltf('/mercian-models/lugless-barber-pole.glb', { dracoLoader: dracoLoader });
 </script>
 
 <T.Group bind:ref dispose={false} {...props} position={[0.0, 0.1, 0.1]}>
 	{#await gltf}
 		{@render fallback?.()}
 	{:then gltf}
-		<T.Mesh geometry={gltf.nodes.Cube001.geometry} material={gltf.nodes.Cube001.material}>
+		<T.Mesh
+			geometry={gltf.nodes.Cube001.geometry}
+			material={gltf.nodes.Cube001.material}
+			castShadow
+		>
 			<T.MeshStandardMaterial
-				color={partColours.logo}
+				color={partColours.pole}
 				roughness={0.036491}
 				metalness={0.346457}
 				side={BackSide}
 			/>
 		</T.Mesh>
-		<T.Mesh geometry={gltf.nodes.bearing.geometry} material={gltf.nodes.bearing.material} />
-		<T.Mesh geometry={gltf.nodes.bearing_2.geometry} material={gltf.nodes.bearing_2.material} />
-		<T.Mesh geometry={gltf.nodes.Extrude_3.geometry} material={gltf.nodes.Extrude_3.material} />
-		<T.Mesh geometry={gltf.nodes.frame_2.geometry} material={gltf.nodes.frame_2.material}>
+		<T.Mesh
+			geometry={gltf.nodes.bearing.geometry}
+			material={gltf.nodes.bearing.material}
+			castShadow
+		>
 			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
 		</T.Mesh>
-		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} />
-		<T.Mesh geometry={gltf.nodes.Cube_1_3.geometry} material={gltf.nodes.Cube_1_3.material} />
+		<T.Mesh
+			geometry={gltf.nodes.bearing_2.geometry}
+			material={gltf.nodes.bearing_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Extrude_3.geometry}
+			material={gltf.nodes.Extrude_3.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.frame_2.geometry}
+			material={gltf.nodes.frame_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} castShadow>
+			<T.MeshStandardMaterial
+				color={partColours.forks}
+				roughness={0.036491}
+				metalness={0.346457}
+				side={BackSide}
+			/>
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Cube_1_3.geometry}
+			material={gltf.nodes.Cube_1_3.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.forks} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.bottom_bracket.geometry}
 			material={gltf.nodes.bottom_bracket.material}
-		/>
-		<T.Mesh geometry={gltf.nodes.Tube.geometry} material={gltf.nodes.Tube.material} />
-		<T.Mesh geometry={gltf.nodes.Lug_1.geometry} material={gltf.nodes.Lug_1.material} />
-		<T.Mesh geometry={gltf.nodes.Lug_1_1.geometry} material={gltf.nodes.Lug_1_1.material} />
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh geometry={gltf.nodes.Tube.geometry} material={gltf.nodes.Tube.material} castShadow>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh geometry={gltf.nodes.Lug_1.geometry} material={gltf.nodes.Lug_1.material} castShadow>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Lug_1_1.geometry}
+			material={gltf.nodes.Lug_1_1.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.R_upper_fork.geometry}
 			material={gltf.nodes.R_upper_fork.material}
-		/>
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.R_upper_fork_2.geometry}
 			material={gltf.nodes.R_upper_fork_2.material}
-		/>
-		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} />
-		<T.Mesh geometry={gltf.nodes.Cylinder.geometry} material={gltf.nodes.Cylinder.material} />
-		<T.Mesh geometry={gltf.nodes.Extrude.geometry} material={gltf.nodes.Extrude.material} />
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} castShadow>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Cylinder.geometry}
+			material={gltf.nodes.Cylinder.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Extrude.geometry}
+			material={gltf.nodes.Extrude.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.rear_wheel_lug.geometry}
 			material={gltf.nodes.rear_wheel_lug.material}
-		/>
-		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} />
-		<T.Mesh geometry={gltf.nodes.lug_2_1.geometry} material={gltf.nodes.lug_2_1.material} />
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} castShadow>
+			<T.MeshStandardMaterial
+				color={partColours.frame}
+				roughness={0.036491}
+				metalness={0.346457}
+				side={BackSide}
+			/>
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.lug_2_1.geometry}
+			material={gltf.nodes.lug_2_1.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.rear_wheel_lug_2.geometry}
 			material={gltf.nodes.rear_wheel_lug_2.material}
-		/>
-		<T.Mesh geometry={gltf.nodes.Cylinder_2.geometry} material={gltf.nodes.Cylinder_2.material} />
-		<T.Mesh geometry={gltf.nodes.Extrude_2.geometry} material={gltf.nodes.Extrude_2.material} />
-		<T.Mesh geometry={gltf.nodes.Cube_1_2.geometry} material={gltf.nodes.Cube_1_2.material} />
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Cylinder_2.geometry}
+			material={gltf.nodes.Cylinder_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Extrude_2.geometry}
+			material={gltf.nodes.Extrude_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Cube_1_2.geometry}
+			material={gltf.nodes.Cube_1_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Chain.geometry} material={gltf.nodes.Chain.material} />
 		<T.Mesh geometry={gltf.nodes.Cogset.geometry} material={gltf.nodes.Cogset.material} />
 
 		<T.Mesh
 			geometry={gltf.nodes.Frame_Details.geometry}
 			material={gltf.nodes.Frame_Details.material}
-		/>
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Frame_Details_2.geometry}
 			material={gltf.nodes.Frame_Details_2.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Main_Gear.geometry}
+			material={gltf.nodes.Main_Gear.material}
+			castShadow
 		/>
-		<T.Mesh geometry={gltf.nodes.Main_Gear.geometry} material={gltf.nodes.Main_Gear.material} />
-		<T.Mesh geometry={gltf.nodes.Pedal_Left.geometry} material={gltf.nodes.Pedal_Left.material} />
-		<T.Mesh geometry={gltf.nodes.Pedal_Right.geometry} material={gltf.nodes.Pedal_Right.material} />
+		<T.Mesh
+			geometry={gltf.nodes.Pedal_Left.geometry}
+			material={gltf.nodes.Pedal_Left.material}
+			castShadow
+		/>
+		<T.Mesh
+			geometry={gltf.nodes.Pedal_Right.geometry}
+			material={gltf.nodes.Pedal_Right.material}
+			castShadow
+		/>
 		<T.Mesh
 			geometry={gltf.nodes.Rear_Derailleur.geometry}
 			material={gltf.nodes.Rear_Derailleur.material}
+			castShadow
 		/>
 		<T.Mesh
 			geometry={gltf.nodes.Rear_Wheel_Lock.geometry}
 			material={gltf.nodes.Rear_Wheel_Lock.material}
-		/>
+		>
+			<T.MeshStandardMaterial color={partColours.axel} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Small_Star_1.geometry}
 			material={gltf.nodes.Small_Star_1.material}
+			castShadow
 		/>
 		<T.Mesh
 			geometry={gltf.nodes.Small_Star_2.geometry}
 			material={gltf.nodes.Small_Star_2.material}
+			castShadow
 		/>
-		<T.Mesh geometry={gltf.nodes.Tire_Rear.geometry} material={gltf.nodes.Tire_Rear.material} />
+		<T.Mesh
+			geometry={gltf.nodes.Tire_Rear.geometry}
+			material={gltf.nodes.Tire_Rear.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.tire} roughness={1} metalness={0.2} />
+		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Wheel_Rear.geometry} material={gltf.nodes.Wheel_Rear.material} />
 		<T.Mesh
 			geometry={gltf.nodes.Front_Wheel_Lock.geometry}
 			material={gltf.nodes.Front_Wheel_Lock.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.axel} roughness={0.036491} metalness={0.346457} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Tire_Front.geometry}
+			material={gltf.nodes.Tire_Front.material}
+			castShadow
+		>
+			<T.MeshStandardMaterial color={partColours.tire} roughness={1} metalness={0.2} />
+		</T.Mesh>
+		<T.Mesh
+			geometry={gltf.nodes.Wheel_Front.geometry}
+			material={gltf.nodes.Wheel_Front.material}
+			castShadow
 		/>
-		<T.Mesh geometry={gltf.nodes.Tire_Front.geometry} material={gltf.nodes.Tire_Front.material} />
-		<T.Mesh geometry={gltf.nodes.Wheel_Front.geometry} material={gltf.nodes.Wheel_Front.material} />
-		<T.Mesh geometry={gltf.nodes.Gear_Switch.geometry} material={gltf.nodes.Gear_Switch.material} />
-		<T.Mesh geometry={gltf.nodes.Steer.geometry} material={gltf.nodes.Steer.material} />
-		<T.Mesh geometry={gltf.nodes.Seat.geometry} material={gltf.nodes.Seat.material} />
-		<T.Mesh geometry={gltf.nodes.Seat_Lock.geometry} material={gltf.nodes.Seat_Lock.material} />
+		<T.Mesh
+			geometry={gltf.nodes.Gear_Switch.geometry}
+			material={gltf.nodes.Gear_Switch.material}
+			castShadow
+		/>
+		<T.Mesh geometry={gltf.nodes.Steer.geometry} material={gltf.nodes.Steer.material} castShadow />
+		<T.Mesh geometry={gltf.nodes.Seat.geometry} material={gltf.nodes.Seat.material} castShadow />
+		<T.Mesh
+			geometry={gltf.nodes.Seat_Lock.geometry}
+			material={gltf.nodes.Seat_Lock.material}
+			castShadow
+		/>
 	{:catch err}
 		{@render error?.({ error: err })}
 	{/await}

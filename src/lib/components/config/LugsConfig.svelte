@@ -86,6 +86,18 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.lugs = '#ffffff';
+			controls?.setPosition(-0.2, 0.9, -0.9, true);
+			controls?.setTarget(0.2, 0.3, 0.5, true);
+			tab = 'lugsConfig';
+		}}
+		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Lugs"
+	>
+		<div class="h-6 w-6 rounded-full bg-[#ffffff]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.lugs = '#151619';
 			controls?.setPosition(-0.2, 0.9, -0.9, true);
 			controls?.setTarget(0.2, 0.3, 0.5, true);

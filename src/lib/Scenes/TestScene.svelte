@@ -60,11 +60,11 @@
 	});
 
 	// Init Camera settings
-	controls?.setPosition(0, 5, 15);
+	controls?.setPosition(0.9, 5, 20);
 	controls?.zoom(0);
 	controls?.setOrbitPoint(0, 0, 0);
-	controls?.dolly(-2);
-	controls?.truck(0, -0.2);
+	controls?.dolly(-1.7);
+	controls?.truck(0.18, -0.4);
 	controls.maxPolarAngle = Math.PI / 2;
 	controls.maxDistance = 5;
 	controls.minDistance = 1;
@@ -81,7 +81,7 @@
 
 <T is={camera} makeDefault />
 
-<T.DirectionalLight position={[10, 0.1, 0.1]} castShadow />
+<T.DirectionalLight position={[20, 25, 20]} intensity={2} castShadow />
 
 <T.Group
 	oncreate={(ref) => {
@@ -95,7 +95,8 @@
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>
 			<T.BoxGeometry args={[50, 0.01, 50]} />
-			<T.MeshStandardMaterial color={'#ffffff'} roughness={0.8} metalness={0.346457} />
+			<T.MeshStandardMaterial color={'#ffffff'} roughness={0.2} metalness={1} />
+			<T.ShadowMaterial opacity={0.1} roughness={0.2} metalness={1} />
 		</T.Mesh>
 	{/if}
 </T.Group>

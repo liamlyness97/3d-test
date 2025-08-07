@@ -15,29 +15,20 @@
 	<button
 		onclick={() => {
 			tab = 'default';
-			controls?.setPosition(0, 0.5, 2, true);
-			controls?.setTarget(0, 0.5, 0, true);
+			controls?.setPosition(0.1, 0.7, 1.5, true);
+			controls?.setTarget(0.2, 0.2, -0.9, true);
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Back"
 	>
 		<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 	</button>
-	<button
-		onclick={() => {
-			partColours.logo = '#ffffff';
 
-			tab = 'logoConfig';
-		}}
-		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-7 w-7 rounded-full border bg-[#ffffff]"></div>
-	</button>
 	<button
 		onclick={() => {
 			partColours.logo = '#025c8d';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -48,7 +39,8 @@
 	<button
 		onclick={() => {
 			partColours.logo = '#560606';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -59,7 +51,8 @@
 	<button
 		onclick={() => {
 			partColours.logo = '#033a1d';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -70,7 +63,8 @@
 	<button
 		onclick={() => {
 			partColours.logo = '#b2391b';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -81,7 +75,8 @@
 	<button
 		onclick={() => {
 			partColours.logo = '#d56c7a';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
@@ -91,8 +86,21 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.logo = '#ffffff';
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
+			tab = 'logoConfig';
+		}}
+		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
+	>
+		<div class="h-7 w-7 rounded-full border bg-[#ffffff]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.logo = '#151619';
-
+			controls?.setPosition(0.4, 0.8, 0.6, true);
+			controls?.setTarget(0.2, 0.2, -0.3, true);
 			tab = 'logoConfig';
 		}}
 		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"

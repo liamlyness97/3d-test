@@ -35,18 +35,26 @@
 	if (data.forksCol && colourMap[data.forksCol]) {
 		partColours.forks = colourMap[data.forksCol];
 	}
-	if (data.lugsCol && colourMap[data.lugsCol]) {
-		partColours.lugs = colourMap[data.lugsCol];
-	}
 	if (data.logoCol && colourMap[data.logoCol]) {
 		partColours.logo = colourMap[data.logoCol];
+	}
+	if (data.logoKeylineCol && colourMap[data.logoKeylineCol]) {
+		partColours.logoKeyline = colourMap[data.logoKeylineCol];
+	}
+	if (data.poleCol && colourMap[data.poleCol]) {
+		partColours.pole = colourMap[data.poleCol];
+	}
+	if (data.poleKeylineCol && colourMap[data.poleKeylineCol]) {
+		partColours.poleKeyline = colourMap[data.poleKeylineCol];
 	}
 
 	function shareSetup() {
 		const frame = hexToColourName[partColours.frame];
 		const forks = hexToColourName[partColours.forks];
-		const lugs = hexToColourName[partColours.lugs];
+		const logoKeyLine = hexToColourName[partColours.logoKeyline];
 		const logo = hexToColourName[partColours.logo];
+		const pole = hexToColourName[partColours.pole];
+		const poleKeyline = hexToColourName[partColours.poleKeyline];
 
 		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&lugs=${lugs}&logo=${logo}`;
 

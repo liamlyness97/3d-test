@@ -155,6 +155,18 @@
 		</button>
 		<button
 			onclick={() => {
+				partColours.logo = '#8A8A8A';
+				controls?.setPosition(0.4, 0.8, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.3, true);
+				tab = 'logoConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full border bg-[#8A8A8A]"></div>
+		</button>
+		<button
+			onclick={() => {
 				partColours.logo = '#151619';
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
@@ -263,6 +275,17 @@
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full border bg-[#ffffff]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.logoKeyline = '#8A8A8A';
+				controls?.setPosition(0.4, 0.8, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.3, true);
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full border bg-[#8A8A8A]"></div>
 		</button>
 		<button
 			onclick={() => {

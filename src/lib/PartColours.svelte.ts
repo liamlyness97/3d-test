@@ -43,7 +43,8 @@ export const colourMap = $state({
     pink: '#d56c7a',
     black: '#151619',
     white: '#ffffff',
-    electricBlue: '#120F6C'
+    electricBlue: '#120F6C',
+    silver: '#8A8A8A'
 })
 
 export const hexToColourName = $state({
@@ -54,5 +55,6 @@ export const hexToColourName = $state({
     '#d56c7a': 'pink',
     '#151619': 'black',
     '#ffffff': 'white',
-    '#120F6C': 'electricBlue'
+    '#120F6C': 'electricBlue',
+    '#8A8A8A': 'silver'
 });

@@ -100,9 +100,9 @@
 				<span
 					in:fly={{ x: 50, duration: 300, delay: 200 }}
 					out:fly={{ x: 50, duration: 200 }}
-					class="absolute flex w-full items-center justify-end gap-2 text-[#0E1E3E] duration-200 hover:opacity-75"
+					class="absolute flex w-full items-center justify-end gap-2 text-[#5DE100] duration-200 hover:opacity-75"
 				>
-					<p class=" mt-1 text-[#0E1E3E]">Share Link Copied</p>
+					<p class=" mt-1 text-[#5DE100]">Share Link Copied</p>
 					<iconify-icon icon="teenyicons:clipboard-tick-solid"></iconify-icon>
 				</span>
 			{/if}
@@ -414,7 +414,9 @@
 			<p class="font-body text-xl">£1,200</p>
 		</div>
 		<div>
-			<button class="font-title border border-white px-6 py-3 font-light uppercase text-white">
+			<button
+				class="font-title border border-white px-6 py-3 font-light uppercase text-white duration-200 hover:bg-white hover:text-[#0E1E3E]"
+			>
 				Pay To Secure
 			</button>
 		</div>

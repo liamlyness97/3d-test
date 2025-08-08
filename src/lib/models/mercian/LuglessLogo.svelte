@@ -37,7 +37,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshStandardMaterial
-				color={partColours.pole}
+				color={partColours.logoKeyline}
 				roughness={0.036491}
 				metalness={0.346457}
 				side={DoubleSide}
@@ -49,7 +49,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshStandardMaterial
-				color={partColours.logo}
+				color={partColours.poleKeyline}
 				roughness={0.036491}
 				metalness={0.346457}
 				side={BackSide}
@@ -69,7 +69,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshStandardMaterial
-				color={partColours.logo}
+				color={partColours.poleKeyline}
 				roughness={0.036491}
 				metalness={0.346457}
 				side={BackSide}

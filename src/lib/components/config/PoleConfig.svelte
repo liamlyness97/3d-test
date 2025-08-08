@@ -4,107 +4,259 @@
 	import { partColours } from '$lib/PartColours.svelte';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
+
+	let subTab = $state('none');
 </script>
 
-<!-- Pole Config -->
-<div
-	class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
-	in:fly={{ duration: 300, delay: 200, y: 20 }}
-	out:fly={{ duration: 200, y: 20 }}
->
-	<button
-		onclick={() => {
-			tab = 'default';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Back"
+{#if subTab == 'none'}
+	<!-- Pole Options -->
+	<div
+		class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
+		in:fly={{ duration: 300, delay: 200, y: 20 }}
+		out:fly={{ duration: 200, y: 20 }}
 	>
-		<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#025c8d';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
+		<button
+			onclick={() => {
+				tab = 'default';
+				controls?.setPosition(0.1, 0.7, 1.5, true);
+				controls?.setTarget(0.2, 0.2, -0.9, true);
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Back"
+		>
+			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
+		</button>
+		<button
+			onclick={() => {
+				subTab = 'poleColour';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+			}}
+			class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+			aria-label="Pole"
+		>
+			Pole Colour
+		</button>
+		<button
+			onclick={() => {
+				subTab = 'poleKeyline';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+			}}
+			class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+			aria-label="Pole"
+		>
+			Pole Keyline
+		</button>
+	</div>
+{/if}
+
+{#if subTab == 'poleColour'}
+	<!-- Pole Colour -->
+	<div
+		class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
+		in:fly={{ duration: 300, delay: 200, y: 20 }}
+		out:fly={{ duration: 200, y: 20 }}
 	>
-		<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#560606';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
+		<button
+			onclick={() => {
+				subTab = 'none';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Back"
+		>
+			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#025c8d';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#560606';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#560606]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#033a1d';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#b2391b';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#b2391b]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#d56c7a';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#ffffff';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#ffffff]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.pole = '#151619';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#151619]"></div>
+		</button>
+	</div>
+{/if}
+
+{#if subTab == 'poleKeyline'}
+	<!-- Pole Colour -->
+	<div
+		class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
+		in:fly={{ duration: 300, delay: 200, y: 20 }}
+		out:fly={{ duration: 200, y: 20 }}
 	>
-		<div class="h-full w-full rounded-full bg-[#560606]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#033a1d';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#b2391b';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#b2391b]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#d56c7a';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#ffffff';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#ffffff]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.pole = '#151619';
-			controls?.setPosition(0, 0.9, 0.6, true);
-			controls?.setTarget(0.2, 0.2, -0.2, true);
-			tab = 'poleConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#151619]"></div>
-	</button>
-</div>
+		<button
+			onclick={() => {
+				subTab = 'none';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Back"
+		>
+			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#025c8d';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#560606';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#560606]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#033a1d';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#b2391b';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#b2391b]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#d56c7a';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#ffffff';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#ffffff]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#151619';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#151619]"></div>
+		</button>
+	</div>
+{/if}

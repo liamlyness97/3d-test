@@ -10,7 +10,7 @@
 {#if subTab == 'none'}
 	<!-- Pole Options -->
 	<div
-		class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
+		class="font-title fixed bottom-24 z-50 flex w-full justify-center gap-4 uppercase"
 		in:fly={{ duration: 300, delay: 200, y: 20 }}
 		out:fly={{ duration: 200, y: 20 }}
 	>

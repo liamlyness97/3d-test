@@ -82,7 +82,15 @@
 
 <T is={camera} makeDefault />
 
-<T.DirectionalLight position={[5, 50, 10]} intensity={4} castShadow />
+<T.DirectionalLight
+	position={[20, 150, 0]}
+	intensity={4}
+	castShadow
+	shadow.mapSize.width={500}
+	shadow.mapSize.height={500}
+	shadow.radius={5}
+	shadow.blurSamples={75}
+/>
 
 <T.Group
 	oncreate={(ref) => {
@@ -95,10 +103,10 @@
 	<LuglessLogo />
 
 	{#if $floor}
-		<T.Mesh receiveShadow position.y={-0.007}>
+		<T.Mesh receiveShadow position.y={-0.1}>
 			<T.BoxGeometry args={[50, 0.01, 50]} />
 			<T.MeshStandardMaterial color={'#ffffff'} roughness={0.2} metalness={1} />
-			<T.ShadowMaterial opacity={0.1} roughness={0.2} metalness={1} />
+			<T.ShadowMaterial opacity={0.25} roughness={0.2} metalness={0} />
 		</T.Mesh>
 	{/if}
 </T.Group>

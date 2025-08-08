@@ -6,9 +6,12 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 <script>
 	import { partColours } from '$lib/PartColours.svelte';
 	import { T } from '@threlte/core';
-	import { useGltf } from '@threlte/extras';
+	import * as THREE from 'three';
+	import { useGltf, useTexture } from '@threlte/extras';
 	import { BackSide, DoubleSide } from 'three';
+	import { FlakesTexture } from 'three/examples/jsm/Addons.js';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+	import { onMount } from 'svelte';
 
 	let { fallback, error, children, ref = $bindable(), ...props } = $props();
 
@@ -18,6 +21,14 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 	const gltf = useGltf('/mercian-models/lugless-logo-keyline-alt.glb', {
 		dracoLoader: dracoLoader
 	});
+
+	const flakesCanvas = new FlakesTexture();
+	const normalMap3 = new THREE.CanvasTexture(flakesCanvas);
+	// Configure the texture
+	normalMap3.wrapS = THREE.RepeatWrapping;
+	normalMap3.wrapT = THREE.RepeatWrapping;
+	normalMap3.repeat.set(10, 6);
+	normalMap3.anisotropy = 16;
 </script>
 
 <T.Group bind:ref dispose={false} {...props}>
@@ -29,17 +40,29 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.Mercian_Logo.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.logo} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.logo}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Mercian_Logo001.geometry}
 			material={gltf.nodes.Mercian_Logo001.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.logoKeyline}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={DoubleSide}
 			/>
 		</T.Mesh>
@@ -48,18 +71,26 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.Pole_Keyline_1.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.poleKeyline}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={BackSide}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Pole.geometry} material={gltf.nodes.Pole.material} castShadow>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.pole}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -68,10 +99,14 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.Pole_Keyline_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.poleKeyline}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -80,34 +115,72 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.bearing.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+				specularColor="#000000"
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.bearing_2.geometry}
 			material={gltf.nodes.bearing_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+				specularColor="#000000"
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Extrude_3.geometry}
 			material={gltf.nodes.Extrude_3.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.frame_2.geometry}
 			material={gltf.nodes.frame_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} castShadow>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.forks}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -116,70 +189,163 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.Cube_1_3.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.forks} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.forks}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.bottom_bracket.geometry}
 			material={gltf.nodes.bottom_bracket.material}
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Tube.geometry} material={gltf.nodes.Tube.material} castShadow>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Lug_1.geometry} material={gltf.nodes.Lug_1.material} castShadow>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Lug_1_1.geometry}
 			material={gltf.nodes.Lug_1_1.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.R_upper_fork.geometry}
 			material={gltf.nodes.R_upper_fork.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+				side={BackSide}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.R_upper_fork_2.geometry}
 			material={gltf.nodes.R_upper_fork_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} castShadow>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Cylinder.geometry}
 			material={gltf.nodes.Cylinder.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Extrude.geometry}
 			material={gltf.nodes.Extrude.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.rear_wheel_lug.geometry}
 			material={gltf.nodes.rear_wheel_lug.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} castShadow>
-			<T.MeshStandardMaterial
+			<T.MeshPhysicalMaterial
 				color={partColours.frame}
-				roughness={0.036491}
-				metalness={0.346457}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -188,35 +354,75 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.lug_2_1.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.rear_wheel_lug_2.geometry}
 			material={gltf.nodes.rear_wheel_lug_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Cylinder_2.geometry}
 			material={gltf.nodes.Cylinder_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Extrude_2.geometry}
 			material={gltf.nodes.Extrude_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Cube_1_2.geometry}
 			material={gltf.nodes.Cube_1_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Chain.geometry} material={gltf.nodes.Chain.material} />
 		<T.Mesh geometry={gltf.nodes.Cogset.geometry} material={gltf.nodes.Cogset.material} />
@@ -226,14 +432,30 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			material={gltf.nodes.Frame_Details.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Frame_Details_2.geometry}
 			material={gltf.nodes.Frame_Details_2.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.frame} roughness={0.036491} metalness={0.346457} />
+			<T.MeshPhysicalMaterial
+				color={partColours.frame}
+				roughness={0.5}
+				metalness={0.9}
+				clearcoat={1}
+				normalMap={normalMap3}
+				normalScale={[0.15, 0.15]}
+				clearcoatRoughness={0.1}
+			/>
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Main_Gear.geometry}

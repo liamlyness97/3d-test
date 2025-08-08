@@ -25,6 +25,18 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.frame = '#120F6C';
+			controls?.setPosition(0.1, 0.7, 1.5, true);
+			controls?.setTarget(0.2, 0.2, -0.9, true);
+			tab = 'frameConfig';
+		}}
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
+	>
+		<div class="h-full w-full rounded-full bg-[#120F6C]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.frame = '#025c8d';
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);
@@ -37,7 +49,7 @@
 	</button>
 	<button
 		onclick={() => {
-			partColours.frame = '#560606';
+			partColours.frame = '#BF1900';
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);
 			tab = 'frameConfig';
@@ -45,11 +57,11 @@
 		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
 	>
-		<div class="h-full w-full rounded-full bg-[#560606]"></div>
+		<div class="h-full w-full rounded-full bg-[#BF1900]"></div>
 	</button>
 	<button
 		onclick={() => {
-			partColours.frame = '#033a1d';
+			partColours.frame = '#248048';
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);
 			tab = 'frameConfig';
@@ -57,11 +69,11 @@
 		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
 	>
-		<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
+		<div class="h-full w-full rounded-full bg-[#248048]"></div>
 	</button>
 	<button
 		onclick={() => {
-			partColours.frame = '#b2391b';
+			partColours.frame = '#E8721C';
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);
 			tab = 'frameConfig';
@@ -69,7 +81,7 @@
 		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Frame"
 	>
-		<div class="h-full w-full rounded-full bg-[#b2391b]"></div>
+		<div class="h-full w-full rounded-full bg-[#E8721C]"></div>
 	</button>
 	<button
 		onclick={() => {

@@ -3,8 +3,8 @@ export const partColours = $state({
     logoKeyline: '#025c8d',
     pole: '#ffffff',
     poleKeyline: '#025c8d',
-    frame: '#025c8d',
-    forks: '#025c8d',
+    frame: '#120F6C',
+    forks: '#120F6C',
     nuts: '#171717',
     axel: '#e0e0e0',
     tire: '#171717',
@@ -37,20 +37,22 @@ export const partColours = $state({
 
 export const colourMap = $state({
     blue: '#025c8d',
-    green: '#033a1d',
-    red: '#560606',
-    orange: '#b2391b',
+    green: '#248048',
+    red: '#BF1900',
+    orange: '#E8721C',
     pink: '#d56c7a',
     black: '#151619',
-    white: '#ffffff'
+    white: '#ffffff',
+    electricBlue: '#120F6C'
 })
 
 export const hexToColourName = $state({
     '#025c8d': 'blue',
-    '#033a1d': 'green',
-    '#560606': 'red',
-    '#b2391b': 'orange',
+    '#248048': 'green',
+    '#BF1900': 'red',
+    '#E8721C': 'orange',
     '#d56c7a': 'pink',
     '#151619': 'black',
-    '#ffffff': 'white'
+    '#ffffff': 'white',
+    '#120F6C': 'electricBlue'
 });

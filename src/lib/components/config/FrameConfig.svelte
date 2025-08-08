@@ -97,6 +97,18 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.frame = '#5c1970';
+			controls?.setPosition(0.1, 0.7, 1.5, true);
+			controls?.setTarget(0.2, 0.2, -0.9, true);
+			tab = 'frameConfig';
+		}}
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
+	>
+		<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.frame = '#ffffff';
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);

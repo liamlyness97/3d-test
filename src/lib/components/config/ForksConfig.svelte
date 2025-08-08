@@ -97,6 +97,18 @@
 	</button>
 	<button
 		onclick={() => {
+			partColours.forks = '#5c1970';
+			controls?.setPosition(0.8, 0.7, 0.8, true);
+			controls?.setTarget(0.2, 0.2, -0.2, true);
+			tab = 'forksConfig';
+		}}
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
+	>
+		<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
+	</button>
+	<button
+		onclick={() => {
 			partColours.forks = '#ffffff';
 			controls?.setPosition(0.8, 0.7, 0.8, true);
 			controls?.setTarget(0.2, 0.2, -0.2, true);

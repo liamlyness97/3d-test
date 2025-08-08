@@ -143,6 +143,18 @@
 		</button>
 		<button
 			onclick={() => {
+				partColours.pole = '#5c1970';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
+		</button>
+		<button
+			onclick={() => {
 				partColours.pole = '#ffffff';
 				controls?.setPosition(0, 0.9, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
@@ -269,6 +281,18 @@
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
+		</button>
+		<button
+			onclick={() => {
+				partColours.poleKeyline = '#5c1970';
+				controls?.setPosition(0, 0.9, 0.6, true);
+				controls?.setTarget(0.2, 0.2, -0.2, true);
+				tab = 'poleConfig';
+			}}
+			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
 		</button>
 		<button
 			onclick={() => {

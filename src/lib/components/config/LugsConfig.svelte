@@ -18,7 +18,7 @@
 			controls?.setPosition(0, 0.5, 2, true);
 			controls?.setTarget(0, 0.5, 0, true);
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Back"
 	>
 		<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
@@ -31,10 +31,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#025c8d]"></div>
+		<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -43,10 +43,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#560606]"></div>
+		<div class="h-full w-full rounded-full bg-[#560606]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -55,10 +55,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#033a1d]"></div>
+		<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -67,10 +67,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#b2391b]"></div>
+		<div class="h-full w-full rounded-full bg-[#b2391b]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -79,10 +79,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#d56c7a]"></div>
+		<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -91,10 +91,10 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#ffffff]"></div>
+		<div class="h-full w-full rounded-full bg-[#ffffff]"></div>
 	</button>
 	<button
 		onclick={() => {
@@ -103,9 +103,9 @@
 			controls?.setTarget(0.2, 0.3, 0.5, true);
 			tab = 'lugsConfig';
 		}}
-		class="flex h-8 w-8 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Lugs"
+		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		aria-label="Frame"
 	>
-		<div class="h-6 w-6 rounded-full bg-[#151619]"></div>
+		<div class="h-full w-full rounded-full bg-[#151619]"></div>
 	</button>
 </div>

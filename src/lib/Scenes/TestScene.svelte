@@ -12,6 +12,7 @@
 	import FrameWithLogo from '$lib/models/mercian/FrameWithLogo.svelte';
 	import LuggedLogoPoll from '$lib/models/mercian/LuggedLogoPoll.svelte';
 	import LuglessFrame from '$lib/models/mercian/LuglessFrame.svelte';
+	import LuglessLogo from '$lib/models/mercian/LuglessLogo.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -81,7 +82,7 @@
 
 <T is={camera} makeDefault />
 
-<T.DirectionalLight position={[20, 25, 20]} intensity={2} castShadow />
+<T.DirectionalLight position={[5, 50, 10]} intensity={4} castShadow />
 
 <T.Group
 	oncreate={(ref) => {
@@ -90,7 +91,8 @@
 	scale={1}
 	position={[0, 0, 0]}
 >
-	<LuglessFrame />
+	<!-- <LuglessLogo /> -->
+	<LuglessLogo />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.007}>

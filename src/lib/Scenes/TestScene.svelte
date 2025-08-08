@@ -83,7 +83,7 @@
 <T is={camera} makeDefault />
 
 <T.DirectionalLight
-	position={[20, 150, 0]}
+	position={[0, 150, 0]}
 	intensity={4}
 	castShadow
 	shadow.mapSize.width={500}

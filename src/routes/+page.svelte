@@ -56,7 +56,7 @@
 		const pole = hexToColourName[partColours.pole];
 		const poleKeyline = hexToColourName[partColours.poleKeyline];
 
-		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&lugs=${lugs}&logo=${logo}`;
+		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&logoKeyLine=${logoKeyLine}&logo=${logo}&pole=${pole}&poleKeyline=${poleKeyline}`;
 
 		navigator.clipboard.writeText(shareUrl);
 		copied = true;
@@ -73,7 +73,7 @@
 			<p class="text-[#0E1E3E]"><span class="font-[600]">Pro Lugged 44</span> Core package</p>
 			<p class="text-[#0E1E3E]">£4854</p>
 		</div>
-		<div class="font-title relative flex w-1/2 justify-end text-xl">
+		<div class="relative flex w-1/2 justify-end font-title text-xl">
 			{#if !copied}
 				<button
 					in:fly={{ x: 50, duration: 300, delay: 200 }}
@@ -230,7 +230,7 @@
 	<!-- Bike Config Icons -->
 	{#if tab == 'default'}
 		<div
-			class="font-title fixed bottom-24 z-50 flex h-10 w-full justify-center gap-4 text-[#0E1E3E]"
+			class="fixed bottom-24 z-50 flex h-10 w-full justify-center gap-4 font-title text-[#0E1E3E]"
 			in:fly={{ duration: 300, delay: 200, y: 20 }}
 			out:fly={{ duration: 200, y: 20 }}
 		>
@@ -251,7 +251,7 @@
 					controls?.setPosition(0.1, 0.7, 1.5, true);
 					controls?.setTarget(0.2, 0.2, -0.9, true);
 				}}
-				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Frame"
 			>
 				Frame
@@ -262,7 +262,7 @@
 					controls?.setPosition(0.8, 0.7, 0.8, true);
 					controls?.setTarget(0.2, 0.2, -0.2, true);
 				}}
-				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Forks"
 			>
 				Forks
@@ -273,7 +273,7 @@
 					controls?.setPosition(0, 0.9, 0.6, true);
 					controls?.setTarget(0.2, 0.2, -0.2, true);
 				}}
-				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Logo"
 			>
 				Pole
@@ -284,7 +284,7 @@
 					controls?.setPosition(0.4, 0.8, 0.6, true);
 					controls?.setTarget(0.2, 0.2, -0.3, true);
 				}}
-				class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Logo"
 			>
 				Logo
@@ -413,7 +413,7 @@
 	</Canvas>
 
 	<div
-		class="bg-brandOrange fixed bottom-0 left-0 flex w-full items-center justify-between px-20 py-3"
+		class="fixed bottom-0 left-0 flex w-full items-center justify-between bg-brandOrange px-20 py-3"
 	>
 		<div class="flex items-center gap-6 text-white">
 			<p class="font-title text-2xl font-normal uppercase tracking-widest">
@@ -423,7 +423,7 @@
 		</div>
 		<div>
 			<button
-				class="font-title border border-white px-6 py-3 font-light uppercase text-white duration-200 hover:bg-white hover:text-[#0E1E3E]"
+				class="border border-white px-6 py-3 font-title font-light uppercase text-white duration-200 hover:bg-white hover:text-[#0E1E3E]"
 			>
 				Pay To Secure
 			</button>

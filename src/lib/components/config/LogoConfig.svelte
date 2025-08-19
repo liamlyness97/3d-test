@@ -10,7 +10,7 @@
 {#if subTab == 'none'}
 	<!-- Pole Options -->
 	<div
-		class="font-title fixed bottom-24 z-50 flex w-full justify-center gap-4 uppercase"
+		class="fixed bottom-24 z-50 flex w-full justify-center gap-4 font-title uppercase"
 		in:fly={{ duration: 300, delay: 200, y: 20 }}
 		out:fly={{ duration: 200, y: 20 }}
 	>
@@ -20,7 +20,7 @@
 				controls?.setPosition(0.1, 0.7, 1.5, true);
 				controls?.setTarget(0.2, 0.2, -0.9, true);
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Back"
 		>
 			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
@@ -31,7 +31,7 @@
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 			}}
-			class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+			class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 			aria-label="Logo"
 		>
 			Logo Colour
@@ -42,7 +42,7 @@
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 			}}
-			class="border-brandBlue flex -translate-y-0 items-center justify-center rounded-full border bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+			class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 			aria-label="Logo"
 		>
 			Logo Keyline
@@ -63,20 +63,33 @@
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Back"
 		>
 			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 		</button>
 
-		<button
+		<div
+			class="flex h-10 w-10 -translate-y-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brandBlue"
+		>
+			<input
+				type="color"
+				bind:value={partColours.logo}
+				name="logo"
+				class="h-[5rem] w-[5rem] scale-125 rounded-full bg-cover object-cover"
+			/>
+		</div>
+	</div>
+{/if}
+
+<!-- <button
 			onclick={() => {
 				partColours.logo = '#120F6C';
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#120F6C]"></div>
@@ -88,7 +101,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
@@ -100,7 +113,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#BF1900]"></div>
@@ -112,7 +125,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#248048]"></div>
@@ -124,7 +137,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#E8721C]"></div>
@@ -136,7 +149,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
@@ -148,7 +161,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
@@ -160,7 +173,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full border bg-[#ffffff]"></div>
@@ -172,7 +185,7 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full border bg-[#8A8A8A]"></div>
@@ -184,13 +197,12 @@
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 				tab = 'logoConfig';
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
 			<div class="h-full w-full rounded-full bg-[#151619]"></div>
 		</button>
-	</div>
-{/if}
+	</div> -->
 
 {#if subTab == 'logoKeyline'}
 	<!-- Logo Config -->
@@ -205,121 +217,21 @@
 				controls?.setPosition(0.4, 0.8, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.3, true);
 			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Back"
 		>
 			<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 		</button>
 
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#120F6C';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
+		<div
+			class="flex h-10 w-10 -translate-y-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brandBlue"
 		>
-			<div class="h-full w-full rounded-full bg-[#120F6C]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#025c8d';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#BF1900';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#BF1900]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#033a1d';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#033a1d]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#E8721C';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#E8721C]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#d56c7a';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#5c1970';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#ffffff';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full border bg-[#ffffff]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#8A8A8A';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full border bg-[#8A8A8A]"></div>
-		</button>
-		<button
-			onclick={() => {
-				partColours.logoKeyline = '#151619';
-				controls?.setPosition(0.4, 0.8, 0.6, true);
-				controls?.setTarget(0.2, 0.2, -0.3, true);
-			}}
-			class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-			aria-label="Frame"
-		>
-			<div class="h-full w-full rounded-full bg-[#151619]"></div>
-		</button>
+			<input
+				type="color"
+				bind:value={partColours.logoKeyline}
+				name="logoKeyline"
+				class="h-[5rem] w-[5rem] scale-125 rounded-full bg-cover object-cover"
+			/>
+		</div>
 	</div>
 {/if}

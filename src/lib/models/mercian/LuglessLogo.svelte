@@ -148,7 +148,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -256,7 +256,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -272,7 +272,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -283,7 +283,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -298,7 +298,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -313,7 +313,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -328,7 +328,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -339,7 +339,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -355,7 +355,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -370,7 +370,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -385,7 +385,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -400,7 +400,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -415,7 +415,7 @@ Command: npx @threlte/gltf@3.0.1 ./static/mercian-models/lugless-logo-keyline-2.
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
+				color={partColours.rearForks}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}

@@ -2,6 +2,7 @@
 	import { Canvas } from '@threlte/core';
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
+
 	import TestScene from '$lib/Scenes/TestScene.svelte';
 	import { colourMap, partColours, hexToColourName } from '$lib/PartColours.svelte';
 	import { fly } from 'svelte/transition';
@@ -16,6 +17,7 @@
 	import LogoConfig from '$lib/components/config/LogoConfig.svelte';
 	import { page } from '$app/state';
 	import PoleConfig from '$lib/components/config/PoleConfig.svelte';
+	import RearForksConfig from '$lib/components/config/RearForksConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -265,7 +267,18 @@
 				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
 				aria-label="Forks"
 			>
-				Forks
+				Front Forks
+			</button>
+			<button
+				onclick={() => {
+					tab = 'rearForksConfig';
+					controls?.setPosition(-0.7, 0.7, 0.8, true);
+					controls?.setTarget(0, 0.3, -0.2, true);
+				}}
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				aria-label="Rear Forks"
+			>
+				Rear Forks
 			</button>
 			<button
 				onclick={() => {
@@ -366,6 +379,11 @@
 	<!-- Forks Config -->
 	{#if tab == 'forksConfig'}
 		<ForksConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Forks Config -->
+	{#if tab == 'rearForksConfig'}
+		<RearForksConfig bind:tab bind:controls />
 	{/if}
 
 	<!-- Lugs Config -->

@@ -5,6 +5,7 @@ export const partColours = $state({
     poleKeyline: '#025c8d',
     frame: '#120F6C',
     forks: '#120F6C',
+    rearForks: '#5c1970',
     nuts: '#171717',
     axel: '#e0e0e0',
     tire: '#171717',

@@ -76,7 +76,7 @@
 				type="color"
 				bind:value={partColours.logo}
 				name="logo"
-				class="h-[5rem] w-[5rem] scale-125 rounded-full bg-cover object-cover"
+				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>
 		</div>
 	</div>
@@ -230,7 +230,7 @@
 				type="color"
 				bind:value={partColours.logoKeyline}
 				name="logoKeyline"
-				class="h-[5rem] w-[5rem] scale-125 rounded-full bg-cover object-cover"
+				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>
 		</div>
 	</div>

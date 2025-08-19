@@ -37,6 +37,9 @@
 	if (data.forksCol && colourMap[data.forksCol]) {
 		partColours.forks = colourMap[data.forksCol];
 	}
+	if (data.rearForksCol && colourMap[data.rearForksCol]) {
+		partColours.rearForks = colourMap[data.rearForksCol];
+	}
 	if (data.logoCol && colourMap[data.logoCol]) {
 		partColours.logo = colourMap[data.logoCol];
 	}

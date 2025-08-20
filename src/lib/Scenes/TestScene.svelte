@@ -8,12 +8,7 @@
 	import CameraControls from '$lib/CameraControls';
 	import Bike from '$lib/models/Bike.svelte';
 	import { metalness } from 'three/tsl';
-	import LuggedFrame from '$lib/models/mercian/LuggedFrame.svelte';
-	import FrameWithLogo from '$lib/models/mercian/FrameWithLogo.svelte';
-	import LuggedLogoPoll from '$lib/models/mercian/LuggedLogoPoll.svelte';
-	import LuglessFrame from '$lib/models/mercian/LuglessFrame.svelte';
-	import LuglessLogo from '$lib/models/mercian/LuglessLogo.svelte';
-	import LuglessFrontLogo from '$lib/models/mercian/LuglessFrontLogo.svelte';
+	import LuglessAllLogos from '$lib/models/mercian/LuglessAllLogos.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -101,7 +96,7 @@
 	position={[0, 0, 0]}
 >
 	<!-- <LuglessLogo /> -->
-	<LuglessFrontLogo />
+	<LuglessAllLogos />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.1}>

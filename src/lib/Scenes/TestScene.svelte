@@ -9,6 +9,7 @@
 	import Bike from '$lib/models/Bike.svelte';
 	import { metalness } from 'three/tsl';
 	import LuglessAllLogos from '$lib/models/mercian/LuglessAllLogos.svelte';
+	import LuglessFull from '$lib/models/mercian/LuglessFull.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -96,7 +97,7 @@
 	position={[0, 0, 0]}
 >
 	<!-- <LuglessLogo /> -->
-	<LuglessAllLogos />
+	<LuglessFull />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.1}>

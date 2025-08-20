@@ -38,6 +38,38 @@ export const partColours = $state({
     lugs: '#560606'
 });
 
+export const polePattern = $state({
+    barber: false,
+    barberKeyline: false,
+    poleMiddle: false,
+    poleTopKeyline: false,
+    poleBottomKeyline: false,
+    poleTop: false,
+    poleTopGap: false,
+    poleBottom: false,
+    poleBottomGap: false,
+    poleTopGapTopKeyline: false,
+    poleTopGapBottomKeyline: false,
+    poleBottomGapBottomKeyline: false,
+    poleBottomGapTopKeyline: false
+})
+
+export const barber = {
+    barber: true,
+    barberKeyline: true,
+    poleMiddle: false,
+    poleTopKeyline: false,
+    poleBottomKeyline: false,
+    poleTop: false,
+    poleTopGap: false,
+    poleBottom: false,
+    poleBottomGap: false,
+    poleTopGapTopKeyline: false,
+    poleTopGapBottomKeyline: false,
+    poleBottomGapBottomKeyline: false,
+    poleBottomGapTopKeyline: false
+}
+
 export const colourMap = $state({
     blue: '#025c8d',
     green: '#248048',

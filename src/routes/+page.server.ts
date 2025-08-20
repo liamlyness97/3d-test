@@ -10,6 +10,8 @@ export const load = (async ({ url }) => {
     const poleKeylineCol = params.get('poleKeyline');
     const logoCol = params.get('logo');
     const logoKeylineCol = params.get('logoKeyline');
+    const frontLogoCol = params.get('frontLogo');
+    const frontLogoKeylineCol = params.get('frontLogoKeyline');
 
     return {
         frameCol,
@@ -17,6 +19,8 @@ export const load = (async ({ url }) => {
         rearForksCol,
         logoKeylineCol,
         logoCol,
+        frontLogoKeylineCol,
+        frontLogoCol,
         poleCol,
         poleKeylineCol
     };

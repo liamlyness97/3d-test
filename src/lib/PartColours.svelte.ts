@@ -1,6 +1,8 @@
 export const partColours = $state({
     logo: '#ffffff',
     logoKeyline: '#025c8d',
+    frontLogo: '#ffffff',
+    frontLogoKeyline: '#025c8d',
     pole: '#ffffff',
     poleKeyline: '#025c8d',
     frame: '#120F6C',

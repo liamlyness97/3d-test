@@ -18,6 +18,7 @@
 	import { page } from '$app/state';
 	import PoleConfig from '$lib/components/config/PoleConfig.svelte';
 	import RearForksConfig from '$lib/components/config/RearForksConfig.svelte';
+	import FrontLogoConfig from '$lib/components/config/FrontLogoConfig.svelte';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -45,6 +46,12 @@
 	}
 	if (data.logoKeylineCol && colourMap[data.logoKeylineCol]) {
 		partColours.logoKeyline = colourMap[data.logoKeylineCol];
+	}
+	if (data.frontLogoCol && colourMap[data.frontLogoCol]) {
+		partColours.frontLogo = colourMap[data.frontLogoCol];
+	}
+	if (data.frontLogoKeylineCol && colourMap[data.frontLogoKeylineCol]) {
+		partColours.frontLogoKeyline = colourMap[data.frontLogoKeylineCol];
 	}
 	if (data.poleCol && colourMap[data.poleCol]) {
 		partColours.pole = colourMap[data.poleCol];
@@ -305,6 +312,17 @@
 			>
 				Logo
 			</button>
+			<button
+				onclick={() => {
+					tab = 'frontLogoConfig';
+					controls?.setPosition(0.9, 0.8, 0.2, true);
+					controls?.setTarget(0, 0.5, -0.3, true);
+				}}
+				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
+				aria-label="Front Logo"
+			>
+				Front Logo
+			</button>
 			<!-- <button
 				onclick={() => {
 					tab = 'lugsConfig';
@@ -422,6 +440,11 @@
 	<!-- Logo Config -->
 	{#if tab == 'logoConfig'}
 		<LogoConfig bind:tab bind:controls />
+	{/if}
+
+	<!-- Front Logo Config -->
+	{#if tab == 'frontLogoConfig'}
+		<FrontLogoConfig bind:tab bind:controls />
 	{/if}
 
 	<!-- Pole Config -->

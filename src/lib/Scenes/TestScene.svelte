@@ -13,6 +13,7 @@
 	import LuggedLogoPoll from '$lib/models/mercian/LuggedLogoPoll.svelte';
 	import LuglessFrame from '$lib/models/mercian/LuglessFrame.svelte';
 	import LuglessLogo from '$lib/models/mercian/LuglessLogo.svelte';
+	import LuglessFrontLogo from '$lib/models/mercian/LuglessFrontLogo.svelte';
 
 	// Loads in the HDRI
 	const { load } = useLoader(RGBELoader);
@@ -100,7 +101,7 @@
 	position={[0, 0, 0]}
 >
 	<!-- <LuglessLogo /> -->
-	<LuglessLogo />
+	<LuglessFrontLogo />
 
 	{#if $floor}
 		<T.Mesh receiveShadow position.y={-0.1}>

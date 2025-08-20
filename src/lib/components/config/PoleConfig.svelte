@@ -83,7 +83,7 @@
 
 		<button
 			onclick={() => {
-				tab = 'default';
+				tab = 'poleConfig';
 				subTab = 'none';
 				polePattern.barber = true;
 				polePattern.barberKeyline = true;

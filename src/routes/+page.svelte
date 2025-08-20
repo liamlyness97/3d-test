@@ -25,7 +25,7 @@
 
 	let enabled = $state(true);
 
-	let tab = $state('default');
+	let tab = $state('start');
 
 	let shareUrl = $state('');
 	let copied = $state(false);
@@ -80,6 +80,27 @@
 </script>
 
 <div class="h-screen w-full">
+	{#if tab == 'start'}
+		<div
+			class="absolute left-0 right-0 z-50 flex h-full w-full flex-col items-center justify-center bg-brandBlue/50"
+		>
+			<div class="flex gap-8 font-title">
+				<button
+					onclick={() => {
+						tab = 'default';
+					}}
+					class="border border-white bg-white px-8 py-3 text-lg font-[600] uppercase tracking-widest text-[#0E1E3E] duration-200 ease-out hover:bg-transparent hover:text-white"
+				>
+					Start now
+				</button>
+				<button
+					class="border border-white bg-none px-8 py-3 text-lg font-[600] uppercase tracking-widest text-white duration-200 ease-out hover:bg-white hover:text-[#0E1E3E]"
+				>
+					Skip and pay deposit
+				</button>
+			</div>
+		</div>
+	{/if}
 	<div class="fixed top-10 z-[900] flex w-full justify-between px-20">
 		<div class="font-body text-lg">
 			<p class="text-[#0E1E3E]"><span class="font-[600]">Pro Lugged 44</span> Core package</p>

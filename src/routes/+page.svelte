@@ -93,11 +93,12 @@
 				>
 					Start now
 				</button>
-				<button
+				<a
+					href="https://mercian.alt-developing.net/checkout"
 					class="border border-white bg-none px-8 py-3 text-lg font-[600] uppercase tracking-widest text-white duration-200 ease-out hover:bg-white hover:text-[#0E1E3E]"
 				>
 					Skip and pay deposit
-				</button>
+				</a>
 			</div>
 		</div>
 	{/if}
@@ -487,11 +488,12 @@
 			<p class="font-body text-xl">£1,200</p>
 		</div>
 		<div>
-			<button
+			<a
+				href="https://mercian.alt-developing.net/checkout"
 				class="border border-white px-6 py-3 font-title font-light uppercase text-white duration-200 hover:bg-white hover:text-[#0E1E3E]"
 			>
 				Pay To Secure
-			</button>
+			</a>
 		</div>
 	</div>
 </div>

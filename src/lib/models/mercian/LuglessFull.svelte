@@ -323,14 +323,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
-				specularColor="#000000"
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -339,14 +340,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
-				specularColor="#000000"
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -370,15 +372,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				transmission={0.6}
-				transparent={true}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.4, 0.6]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} castShadow>
@@ -417,35 +419,41 @@
 			material={gltf.nodes.bottom_bracket.material}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Tube.geometry} material={gltf.nodes.Tube.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Lug_1.geometry} material={gltf.nodes.Lug_1.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -454,13 +462,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -648,13 +658,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -663,13 +675,15 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frame}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.frame.colour}
+				roughness={partsConfig.frame.roughness}
+				metalness={partsConfig.frame.metalness}
+				transmission={partsConfig.frame.transmission}
+				transparent={partsConfig.frame.transparent}
+				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.frame.normalScale}
+				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh

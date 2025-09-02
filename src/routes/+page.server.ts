@@ -5,7 +5,10 @@ export const load = (async ({ url }) => {
 
     const frameCol = `${params.get('frame')}`;
     const forksCol = `${params.get('forks')}`;
-    const rearForksCol = `${params.get('rearForks')}`;
+    const rearForksTopCol = `${params.get('rearForksTop')}`;
+    const rearForksBottomCol = `${params.get('rearForksBottom')}`;
+    const rearForksBracketCol = `${params.get('rearForksBracket')}`;
+    const rearForksArchCol = `${params.get('rearForksArch')}`;
     const poleCol = `${decodeURIComponent(params.get('pole'))}`;
     const poleKeylineCol = `${decodeURIComponent(params.get('poleKeyline'))}`;
     const logoCol = `${decodeURIComponent(params.get('logo'))}`;
@@ -17,7 +20,10 @@ export const load = (async ({ url }) => {
     return {
         frameCol,
         forksCol,
-        rearForksCol,
+        rearForksTopCol,
+        rearForksBottomCol,
+        rearForksBracketCol,
+        rearForksArchCol,
         logoKeylineCol,
         logoCol,
         frontLogoKeylineCol,

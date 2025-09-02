@@ -38,8 +38,17 @@
 	if (data.forksCol && colourMap[data.forksCol]) {
 		partColours.forks = colourMap[data.forksCol];
 	}
-	if (data.rearForksCol && colourMap[data.rearForksCol]) {
-		partColours.rearForks = colourMap[data.rearForksCol];
+	if (data.rearForksTopCol && colourMap[data.rearForksTopCol]) {
+		partColours.rearForksTop = colourMap[data.rearForksTopCol];
+	}
+	if (data.rearForksBottomCol && colourMap[data.rearForksBottomCol]) {
+		partColours.rearForksBottom = colourMap[data.rearForksBottomCol];
+	}
+	if (data.rearForksBracketCol && colourMap[data.rearForksBracketCol]) {
+		partColours.rearForksBracket = colourMap[data.rearForksBracketCol];
+	}
+	if (data.rearForksArchCol && colourMap[data.rearForksArchCol]) {
+		partColours.rearForksArch = colourMap[data.rearForksArchCol];
 	}
 	if (data.logoCol != 'null') {
 		partColours.logo = data.logoCol;
@@ -69,7 +78,10 @@
 	function shareSetup() {
 		const frame = hexToColourName[partColours.frame];
 		const forks = hexToColourName[partColours.forks];
-		const rearForks = hexToColourName[partColours.rearForks];
+		const rearForksTop = hexToColourName[partColours.rearForksTop];
+		const rearForksBottom = hexToColourName[partColours.rearForksBottom];
+		const rearForksBracket = hexToColourName[partColours.rearForksBracket];
+		const rearForksArch = hexToColourName[partColours.rearForksArch];
 		const logoKeyLine = partColours.logoKeyline;
 		const logo = partColours.logo;
 		const frontLogoKeyline = partColours.frontLogoKeyline;
@@ -77,7 +89,7 @@
 		const pole = partColours.pole;
 		const poleKeyline = partColours.poleKeyline;
 
-		shareUrl = `${page.url.origin}?frame=${frame}&forks=${forks}&logoKeyline=${encodeURIComponent(logoKeyLine)}&logo=${encodeURIComponent(logo)}&frontLogoKeyline=${encodeURIComponent(frontLogoKeyline)}&frontLogo=${encodeURIComponent(frontLogo)}&pole=${encodeURIComponent(pole)}&poleKeyline=${encodeURIComponent(poleKeyline)}&rearForks=${rearForks}&pattern=${currentPattern}`;
+		shareUrl = `${page.url.origin}?frame=${frame}&forks=${forks}&logoKeyline=${encodeURIComponent(logoKeyLine)}&logo=${encodeURIComponent(logo)}&frontLogoKeyline=${encodeURIComponent(frontLogoKeyline)}&frontLogo=${encodeURIComponent(frontLogo)}&pole=${encodeURIComponent(pole)}&poleKeyline=${encodeURIComponent(poleKeyline)}&rearForksTop=${rearForksTop}&rearForksBottom=${rearForksBottom}&rearForksBracket=${rearForksBracket}&rearForksArch=${rearForksArch}&pattern=${currentPattern}`;
 
 		navigator.clipboard.writeText(shareUrl);
 		copied = true;

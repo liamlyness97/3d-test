@@ -30,8 +30,6 @@
 
 	let { data } = $props();
 
-	console.log(data);
-
 	if (data.frameCol && colourMap[data.frameCol]) {
 		partColours.frame = colourMap[data.frameCol];
 	}

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type CC from 'camera-controls';
 	import { fly } from 'svelte/transition';
-	import { partColours, polePattern } from '$lib/PartColours.svelte';
+	import { partColours, patternMap, polePattern } from '$lib/PartColours.svelte';
+	import { updatePatternToMatch } from '../helpers/PatternMatch';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 
@@ -85,19 +86,7 @@
 			onclick={() => {
 				tab = 'poleConfig';
 				subTab = 'none';
-				polePattern.barber = true;
-				polePattern.barberKeyline = true;
-				polePattern.poleMiddle = false;
-				polePattern.poleTopKeyline = false;
-				polePattern.poleBottomKeyline = false;
-				polePattern.poleTopGap = false;
-				polePattern.poleTop = false;
-				polePattern.poleBottom = false;
-				polePattern.poleBottomGap = false;
-				polePattern.poleTopGapTopKeyline = false;
-				polePattern.poleTopGapBottomKeyline = false;
-				polePattern.poleBottomGapBottomKeyline = false;
-				polePattern.poleBottomGapTopKeyline = false;
+				updatePatternToMatch(polePattern, patternMap, 'barber');
 				controls?.setPosition(0, 0.9, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
 			}}
@@ -111,19 +100,7 @@
 			onclick={() => {
 				tab = 'poleConfig';
 				subTab = 'none';
-				polePattern.barber = false;
-				polePattern.barberKeyline = false;
-				polePattern.poleMiddle = true;
-				polePattern.poleTopKeyline = true;
-				polePattern.poleBottomKeyline = true;
-				polePattern.poleTopGap = true;
-				polePattern.poleTop = true;
-				polePattern.poleBottom = true;
-				polePattern.poleBottomGap = true;
-				polePattern.poleTopGapTopKeyline = false;
-				polePattern.poleTopGapBottomKeyline = false;
-				polePattern.poleBottomGapBottomKeyline = false;
-				polePattern.poleBottomGapTopKeyline = false;
+				updatePatternToMatch(polePattern, patternMap, 'solid');
 				controls?.setPosition(0, 0.9, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
 			}}
@@ -136,19 +113,7 @@
 			onclick={() => {
 				tab = 'poleConfig';
 				subTab = 'none';
-				polePattern.barber = false;
-				polePattern.barberKeyline = false;
-				polePattern.poleMiddle = true;
-				polePattern.poleTopKeyline = true;
-				polePattern.poleBottomKeyline = true;
-				polePattern.poleTopGap = false;
-				polePattern.poleTop = true;
-				polePattern.poleBottom = true;
-				polePattern.poleBottomGap = false;
-				polePattern.poleTopGapTopKeyline = true;
-				polePattern.poleTopGapBottomKeyline = true;
-				polePattern.poleBottomGapBottomKeyline = true;
-				polePattern.poleBottomGapTopKeyline = true;
+				updatePatternToMatch(polePattern, patternMap, 'split');
 				controls?.setPosition(0, 0.9, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
 			}}
@@ -161,19 +126,7 @@
 			onclick={() => {
 				tab = 'poleConfig';
 				subTab = 'none';
-				polePattern.barber = false;
-				polePattern.barberKeyline = false;
-				polePattern.poleMiddle = false;
-				polePattern.poleTopKeyline = false;
-				polePattern.poleBottomKeyline = false;
-				polePattern.poleTopGap = false;
-				polePattern.poleTop = false;
-				polePattern.poleBottom = false;
-				polePattern.poleBottomGap = false;
-				polePattern.poleTopGapTopKeyline = false;
-				polePattern.poleTopGapBottomKeyline = false;
-				polePattern.poleBottomGapBottomKeyline = false;
-				polePattern.poleBottomGapTopKeyline = false;
+				updatePatternToMatch(polePattern, patternMap, 'none');
 				controls?.setPosition(0, 0.9, 0.6, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
 			}}

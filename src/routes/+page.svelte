@@ -2,23 +2,21 @@
 	import { Canvas } from '@threlte/core';
 	import type CC from 'camera-controls';
 	import type { Mesh } from 'three';
-
 	import TestScene from '$lib/Scenes/TestScene.svelte';
-	import { colourMap, partColours, hexToColourName } from '$lib/PartColours.svelte';
+	import {
+		colourMap,
+		partColours,
+		hexToColourName,
+		patternMap,
+		polePattern
+	} from '$lib/PartColours.svelte';
 	import { fly } from 'svelte/transition';
-	import FrameConfig from '$lib/components/config/FrameConfig.svelte';
-	import ForksConfig from '$lib/components/config/ForksConfig.svelte';
-	import CrankArmsConfig from '$lib/components/config/CrankArmsConfig.svelte';
-	import CrankCogConfig from '$lib/components/config/CrankCogConfig.svelte';
-	import PedalConfig from '$lib/components/config/PedalConfig.svelte';
-	import HubsConfig from '$lib/components/config/HubsConfig.svelte';
-	import RimsConfig from '$lib/components/config/RimsConfig.svelte';
-	import LugsConfig from '$lib/components/config/LugsConfig.svelte';
-	import LogoConfig from '$lib/components/config/LogoConfig.svelte';
 	import { page } from '$app/state';
-	import PoleConfig from '$lib/components/config/PoleConfig.svelte';
-	import RearForksConfig from '$lib/components/config/RearForksConfig.svelte';
-	import FrontLogoConfig from '$lib/components/config/FrontLogoConfig.svelte';
+	import Configs from '$lib/components/config/Configs.svelte';
+	import {
+		findMatchingPattern,
+		updatePatternToMatch
+	} from '$lib/components/helpers/PatternMatch.js';
 
 	let controls = $state<CC>();
 	let mesh = $state<Mesh>();
@@ -41,40 +39,56 @@
 	if (data.rearForksCol && colourMap[data.rearForksCol]) {
 		partColours.rearForks = colourMap[data.rearForksCol];
 	}
-	if (data.logoCol && colourMap[data.logoCol]) {
-		partColours.logo = colourMap[data.logoCol];
+	if (data.logoCol) {
+		partColours.logo = data.logoCol;
 	}
-	if (data.logoKeylineCol && colourMap[data.logoKeylineCol]) {
-		partColours.logoKeyline = colourMap[data.logoKeylineCol];
+	if (data.logoKeylineCol) {
+		partColours.logoKeyline = data.logoKeylineCol;
 	}
-	if (data.frontLogoCol && colourMap[data.frontLogoCol]) {
-		partColours.frontLogo = colourMap[data.frontLogoCol];
+	if (data.frontLogoCol) {
+		partColours.frontLogo = data.frontLogoCol;
 	}
-	if (data.frontLogoKeylineCol && colourMap[data.frontLogoKeylineCol]) {
-		partColours.frontLogoKeyline = colourMap[data.frontLogoKeylineCol];
+	if (data.frontLogoKeylineCol) {
+		partColours.frontLogoKeyline = data.frontLogoKeylineCol;
 	}
-	if (data.poleCol && colourMap[data.poleCol]) {
-		partColours.pole = colourMap[data.poleCol];
+	if (data.poleCol) {
+		partColours.pole = data.poleCol;
 	}
-	if (data.poleKeylineCol && colourMap[data.poleKeylineCol]) {
-		partColours.poleKeyline = colourMap[data.poleKeylineCol];
+	if (data.poleKeylineCol) {
+		partColours.poleKeyline = data.poleKeylineCol;
 	}
+
+	if (data.polePattern) {
+		updatePatternToMatch(polePattern, patternMap, data.polePattern);
+	}
+
+	let currentPattern: string | null = $derived(findMatchingPattern(polePattern, patternMap));
+
+	$inspect(partColours.rearForks, hexToColourName[partColours.rearForks], 'rear forks');
+	$inspect(partColours.frame, hexToColourName[partColours.frame], 'frame');
+	$inspect(partColours.forks, hexToColourName[partColours.forks], 'forks');
+
+	console.log(data.poleCol);
 
 	function shareSetup() {
 		const frame = hexToColourName[partColours.frame];
 		const forks = hexToColourName[partColours.forks];
-		const logoKeyLine = hexToColourName[partColours.logoKeyline];
-		const logo = hexToColourName[partColours.logo];
-		const pole = hexToColourName[partColours.pole];
-		const poleKeyline = hexToColourName[partColours.poleKeyline];
+		const rearForks = hexToColourName[partColours.rearForks];
+		const logoKeyLine = partColours.logoKeyline;
+		const logo = partColours.logo;
+		const frontLogoKeyline = partColours.frontLogoKeyline;
+		const frontLogo = partColours.frontLogo;
+		const pole = partColours.pole;
+		const poleKeyline = partColours.poleKeyline;
 
-		shareUrl = `${page.url}?frame=${frame}&forks=${forks}&logoKeyLine=${logoKeyLine}&logo=${logo}&pole=${pole}&poleKeyline=${poleKeyline}`;
+		shareUrl = `${page.url.origin}?frame=${frame}&forks=${forks}&logoKeyline=${encodeURIComponent(logoKeyLine)}&logo=${encodeURIComponent(logo)}&frontLogoKeyline=${encodeURIComponent(frontLogoKeyline)}&frontLogo=${encodeURIComponent(frontLogo)}&pole=${encodeURIComponent(pole)}&poleKeyline=${encodeURIComponent(poleKeyline)}&rearForks=${rearForks}&pattern=${currentPattern}`;
 
 		navigator.clipboard.writeText(shareUrl);
 		copied = true;
 
 		setTimeout(() => {
 			copied = false;
+			shareUrl = '';
 		}, 5000);
 	}
 </script>
@@ -151,328 +165,8 @@
 		</div>
 	</div>
 
-	<!-- Init Controls -->
-	{#if tab == 'default'}
-		<!-- <div
-			in:fly={{ duration: 300, delay: 200, y: 20 }}
-			out:fly={{ duration: 200, y: 20 }}
-			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
-		>
-			<button
-				onclick={() => {
-					tab = 'camera';
-					controls?.setPosition(0.1, 0.7, 1.5, true);
-					controls?.setTarget(0.2, 0.2, -0.9, true);
-				}}
-				class="xl:flex-r flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera"
-			>
-				<iconify-icon icon="jam:video-camera-f"></iconify-icon>
-			</button>
-			<button
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-lg duration-300 ease-out hover:-translate-y-1"
-				aria-label="Config"
-				onclick={() => {
-					tab = 'config';
-					controls?.setPosition(0.1, 0.7, 1.5, true);
-					controls?.setTarget(0.2, 0.2, -0.9, true);
-				}}
-			>
-				<iconify-icon icon="hugeicons:configuration-01"></iconify-icon>
-			</button>
-		</div> -->
-	{/if}
-
-	<!-- Camera Controls -->
-	{#if tab == 'camera'}
-		<!-- <div
-			class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
-			in:fly={{ duration: 300, delay: 200, y: 20 }}
-			out:fly={{ duration: 200, y: 20 }}
-		>
-			<button
-				onclick={() => {
-					tab = 'default';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0, 0.5, 0, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Back"
-			>
-				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(-0.38, 1, -0.25, true);
-					controls?.setTarget(1.2, 1, 1, true);
-				}}
-			>
-				Seat
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(0.5, 0.75, -0.6, true);
-					controls?.setTarget(1, 0, 0.6, true);
-				}}
-			>
-				Front Wheel
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(-1, 0.5, 0.85, true);
-					controls?.setTarget(0, 0.2, 0.45, true);
-				}}
-			>
-				Back Wheel
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(1, 1.1, -0.85, true);
-					controls?.setTarget(0, 1, -0.25, true);
-				}}
-				>Handle Bars
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(1, 1.1, 0.85, true);
-					controls?.setTarget(0, 0, 0.25, true);
-				}}
-				>Peddle
-			</button>
-			<button
-				class="flex h-10 -translate-y-0 items-center justify-center rounded-full bg-white px-4 text-[0.6rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Camera Control"
-				onclick={() => {
-					controls?.setPosition(0.5, 0.75, -0.2, true);
-					controls?.setTarget(0, 0, 0.25, true);
-				}}
-				>Crank
-			</button>
-		</div> -->
-	{/if}
-
-	<!-- Bike Config Icons -->
-	{#if tab == 'default'}
-		<div
-			class="fixed bottom-24 z-50 flex h-10 w-full justify-center gap-4 font-title text-[#0E1E3E]"
-			in:fly={{ duration: 300, delay: 200, y: 20 }}
-			out:fly={{ duration: 200, y: 20 }}
-		>
-			<!-- <button
-				onclick={() => {
-					tab = 'default';
-					controls?.setPosition(0, 0.5, 2, true);
-					controls?.setTarget(0, 0.5, 0, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Back"
-			>
-				<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
-			</button> -->
-			<button
-				onclick={() => {
-					tab = 'frameConfig';
-					controls?.setPosition(0.1, 0.7, 1.5, true);
-					controls?.setTarget(0.2, 0.2, -0.9, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Frame"
-			>
-				Frame
-			</button>
-			<button
-				onclick={() => {
-					tab = 'forksConfig';
-					controls?.setPosition(0.8, 0.7, 0.8, true);
-					controls?.setTarget(0.2, 0.2, -0.2, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Forks"
-			>
-				Front Forks
-			</button>
-			<button
-				onclick={() => {
-					tab = 'rearForksConfig';
-					controls?.setPosition(-0.7, 0.7, 0.8, true);
-					controls?.setTarget(0, 0.3, -0.2, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Rear Forks"
-			>
-				Rear Forks
-			</button>
-			<button
-				onclick={() => {
-					tab = 'poleConfig';
-					controls?.setPosition(0, 0.9, 0.6, true);
-					controls?.setTarget(0.2, 0.2, -0.2, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Logo"
-			>
-				Pole
-			</button>
-			<button
-				onclick={() => {
-					tab = 'logoConfig';
-					controls?.setPosition(0.4, 0.8, 0.6, true);
-					controls?.setTarget(0.2, 0.2, -0.3, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Logo"
-			>
-				Logo
-			</button>
-			<button
-				onclick={() => {
-					tab = 'frontLogoConfig';
-					controls?.setPosition(0.9, 0.8, 0.2, true);
-					controls?.setTarget(0, 0.5, -0.3, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Front Logo"
-			>
-				Front Logo
-			</button>
-			<!-- <button
-				onclick={() => {
-					tab = 'lugsConfig';
-					controls?.setPosition(-0.2, 0.9, -0.9, true);
-					controls?.setTarget(0.2, 0.3, 0.5, true);
-				}}
-				class="flex -translate-y-0 items-center justify-center rounded-full bg-white px-8 text-[1rem] text-sm font-light duration-300 ease-out hover:-translate-y-1"
-				aria-label="Lugs"
-			>
-				Lugs
-			</button> -->
-			<!-- <button
-				onclick={() => {
-					tab = 'crankArmConfig';
-					controls?.setPosition(0.5, 0.75, -0.2, true);
-					controls?.setTarget(0, 0, 0.25, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Crank Arm"
-			>
-				<img class="h-4 w-4" src="/icons/crank.svg" alt="Crank Arms Icon" />
-			</button> -->
-			<!-- <button
-				onclick={() => {
-					tab = 'crankCogConfig';
-					controls?.setPosition(0.5, 0.75, -0.2, true);
-					controls?.setTarget(0, 0, 0.25, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Crank"
-			>
-				<img class="h-4 w-4" src="/icons/cog.svg" alt="Crank Icon" />
-			</button> -->
-			<!-- <button
-				onclick={() => {
-					tab = 'pedalConfig';
-					controls?.setPosition(1, 1.1, 0.85, true);
-					controls?.setTarget(0, 0, 0.25, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Pedal"
-			>
-				<img class="h-4 w-4" src="/icons/pedal.svg" alt="Pedal Icon" />
-			</button> -->
-			<!-- <button
-				onclick={() => {
-					tab = 'hubsConfig';
-					controls?.setPosition(1, 0.75, -0.75, true);
-					controls?.setTarget(0, 0.25, -0.5, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Hub"
-			>
-				<img class="h-4 w-4" src="/icons/hub.svg" alt="Hub Icon" />
-			</button> -->
-			<!-- <button
-				onclick={() => {
-					tab = 'rimsConfig';
-					controls?.setPosition(-1, 0.5, 0.85, true);
-					controls?.setTarget(0, 0.2, 0.45, true);
-				}}
-				class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-				aria-label="Wheel"
-			>
-				<img class="h-6 w-6" src="/icons/wheel.svg" alt="Wheel Icon" />
-			</button> -->
-		</div>
-	{/if}
-
-	<!-- Frame Config -->
-	{#if tab == 'frameConfig'}
-		<FrameConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Forks Config -->
-	{#if tab == 'forksConfig'}
-		<ForksConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Forks Config -->
-	{#if tab == 'rearForksConfig'}
-		<RearForksConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Lugs Config -->
-	{#if tab == 'lugsConfig'}
-		<LugsConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Crank Arms Config -->
-	{#if tab == 'crankArmConfig'}
-		<CrankArmsConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Crank Cog Config -->
-	{#if tab == 'crankCogConfig'}
-		<CrankCogConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Pedal Config -->
-	{#if tab == 'pedalConfig'}
-		<PedalConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Hubs Config -->
-	{#if tab == 'hubsConfig'}
-		<HubsConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Rims Config -->
-	{#if tab == 'rimsConfig'}
-		<RimsConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Logo Config -->
-	{#if tab == 'logoConfig'}
-		<LogoConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Front Logo Config -->
-	{#if tab == 'frontLogoConfig'}
-		<FrontLogoConfig bind:tab bind:controls />
-	{/if}
-
-	<!-- Pole Config -->
-	{#if tab == 'poleConfig'}
-		<PoleConfig bind:tab bind:controls />
-	{/if}
+	<!-- Configs -->
+	<Configs bind:tab bind:controls />
 
 	<Canvas>
 		<TestScene bind:controls bind:mesh />

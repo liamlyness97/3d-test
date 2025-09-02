@@ -1,4 +1,46 @@
-export const partColours = $state({
+import type { PatternMap, PolePattern } from "./components/helpers/PatternMatch";
+
+export type PartColours = {
+    logo: string;
+    logoKeyline: string;
+    frontLogo: string;
+    frontLogoKeyline: string;
+    pole: string;
+    poleKeyline: string;
+    frame: string;
+    forks: string;
+    rearForks: string;
+    nuts: string;
+    axel: string;
+    tire: string;
+    barWrap: string;
+    handleBar: string;
+    frontRim: string;
+    frontSpokes: string;
+    backSpokes: string;
+    frontSpokeJoint: string;
+    backSpokeJoint: string;
+    frontHub: string;
+    backHub: string;
+    crankSet: string;
+    pedals: string;
+    stem: string;
+    barSpacers: string;
+    stemBolts: string;
+    headSet: string;
+    stemCap: string;
+    saddleRails: string;
+    seatClamp: string;
+    seatPost: string;
+    seatPostClamp: string;
+    crankOuter: string;
+    crankInner: string;
+    chain: string;
+    rearCrank: string;
+    lugs: string;
+}
+
+export const partColours: PartColours = $state({
     logo: '#ffffff',
     logoKeyline: '#025c8d',
     frontLogo: '#ffffff',
@@ -38,7 +80,7 @@ export const partColours = $state({
     lugs: '#560606'
 });
 
-export const polePattern = $state({
+export const polePattern: PolePattern = $state({
     barber: true,
     barberKeyline: true,
     poleMiddle: false,
@@ -52,6 +94,69 @@ export const polePattern = $state({
     poleTopGapBottomKeyline: false,
     poleBottomGapBottomKeyline: false,
     poleBottomGapTopKeyline: false
+})
+
+export const patternMap: PatternMap = $state({
+    barber: {
+        barber: true,
+        barberKeyline: true,
+        poleMiddle: false,
+        poleTopKeyline: false,
+        poleBottomKeyline: false,
+        poleTopGap: false,
+        poleTop: false,
+        poleBottom: false,
+        poleBottomGap: false,
+        poleTopGapTopKeyline: false,
+        poleTopGapBottomKeyline: false,
+        poleBottomGapBottomKeyline: false,
+        poleBottomGapTopKeyline: false
+    },
+    solid: {
+        barber: false,
+        barberKeyline: false,
+        poleMiddle: true,
+        poleTopKeyline: true,
+        poleBottomKeyline: true,
+        poleTopGap: true,
+        poleTop: true,
+        poleBottom: true,
+        poleBottomGap: true,
+        poleTopGapTopKeyline: false,
+        poleTopGapBottomKeyline: false,
+        poleBottomGapBottomKeyline: false,
+        poleBottomGapTopKeyline: false,
+    },
+    split: {
+        barber: false,
+        barberKeyline: false,
+        poleMiddle: true,
+        poleTopKeyline: true,
+        poleBottomKeyline: true,
+        poleTopGap: false,
+        poleTop: true,
+        poleBottom: true,
+        poleBottomGap: false,
+        poleTopGapTopKeyline: true,
+        poleTopGapBottomKeyline: true,
+        poleBottomGapBottomKeyline: true,
+        poleBottomGapTopKeyline: true,
+    },
+    none: {
+        barber: false,
+        barberKeyline: false,
+        poleMiddle: false,
+        poleTopKeyline: false,
+        poleBottomKeyline: false,
+        poleTop: false,
+        poleTopGap: false,
+        poleBottom: false,
+        poleBottomGap: false,
+        poleTopGapTopKeyline: false,
+        poleTopGapBottomKeyline: false,
+        poleBottomGapBottomKeyline: false,
+        poleBottomGapTopKeyline: false
+    }
 })
 
 export const colourMap = $state({

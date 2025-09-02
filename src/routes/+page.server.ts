@@ -6,12 +6,13 @@ export const load = (async ({ url }) => {
     const frameCol = params.get('frame');
     const forksCol = params.get('forks');
     const rearForksCol = params.get('rearForks');
-    const poleCol = params.get('pole');
-    const poleKeylineCol = params.get('poleKeyline');
-    const logoCol = params.get('logo');
-    const logoKeylineCol = params.get('logoKeyline');
-    const frontLogoCol = params.get('frontLogo');
-    const frontLogoKeylineCol = params.get('frontLogoKeyline');
+    const poleCol = `${decodeURIComponent(params.get('pole'))}`;
+    const poleKeylineCol = `${decodeURIComponent(params.get('poleKeyline'))}`;
+    const logoCol = `${decodeURIComponent(params.get('logo'))}`;
+    const logoKeylineCol = `${decodeURIComponent(params.get('logoKeyline'))}`;
+    const frontLogoCol = `${decodeURIComponent(params.get('frontLogo'))}`;
+    const frontLogoKeylineCol = `${decodeURIComponent(params.get('frontLogoKeyline'))}`;
+    const polePattern = params.get('pattern');
 
     return {
         frameCol,
@@ -22,6 +23,7 @@ export const load = (async ({ url }) => {
         frontLogoKeylineCol,
         frontLogoCol,
         poleCol,
-        poleKeylineCol
+        poleKeylineCol,
+        polePattern
     };
 }) satisfies PageServerLoad;

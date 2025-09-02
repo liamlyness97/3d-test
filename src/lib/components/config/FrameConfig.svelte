@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type CC from 'camera-controls';
 	import { fly } from 'svelte/transition';
-	import { partColours } from '$lib/PartColours.svelte';
+	import { colourMap, partColours } from '$lib/PartColours.svelte';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 </script>
@@ -18,129 +18,23 @@
 			controls?.setPosition(0.1, 0.7, 1.5, true);
 			controls?.setTarget(0.2, 0.2, -0.9, true);
 		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
+		class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 		aria-label="Back"
 	>
 		<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#120F6C';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#120F6C]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#025c8d';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#025c8d]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#BF1900';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#BF1900]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#248048';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#248048]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#E8721C';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#E8721C]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#d56c7a';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#d56c7a]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#5c1970';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#5c1970]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#ffffff';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#ffffff]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#8A8A8A';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#8A8A8A]"></div>
-	</button>
-	<button
-		onclick={() => {
-			partColours.frame = '#151619';
-			controls?.setPosition(0.1, 0.7, 1.5, true);
-			controls?.setTarget(0.2, 0.2, -0.9, true);
-			tab = 'frameConfig';
-		}}
-		class="border-brandBlue flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-		aria-label="Frame"
-	>
-		<div class="h-full w-full rounded-full bg-[#151619]"></div>
-	</button>
+	{#each Object.keys(colourMap) as colour}
+		<button
+			onclick={() => {
+				partColours.frame = colourMap[String(colour)];
+				controls?.setPosition(0.1, 0.7, 1.5, true);
+				controls?.setTarget(0.2, 0.2, -0.9, true);
+				tab = 'frameConfig';
+			}}
+			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
+			aria-label="Frame"
+		>
+			<div class="h-full w-full rounded-full bg-[{colourMap[colour]}]"></div>
+		</button>
+	{/each}
 </div>

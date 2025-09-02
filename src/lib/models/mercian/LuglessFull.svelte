@@ -354,7 +354,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksArch}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -462,7 +462,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksTop}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -478,7 +478,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksTop}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -489,7 +489,7 @@
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBottom}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -504,13 +504,14 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
 				normalMap={normalMap3}
 				normalScale={[0.15, 0.15]}
 				clearcoatRoughness={0.1}
+				side={DoubleSide}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -519,7 +520,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -534,7 +535,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -545,7 +546,7 @@
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBottom}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -576,7 +577,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
@@ -591,13 +592,14 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
 				normalMap={normalMap3}
 				normalScale={[0.15, 0.15]}
 				clearcoatRoughness={0.1}
+				side={DoubleSide}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -606,13 +608,14 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBracket}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}
 				normalMap={normalMap3}
 				normalScale={[0.15, 0.15]}
 				clearcoatRoughness={0.1}
+				side={DoubleSide}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -621,7 +624,7 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
+				color={partColours.rearForksBottom}
 				roughness={0.5}
 				metalness={0.9}
 				clearcoat={1}

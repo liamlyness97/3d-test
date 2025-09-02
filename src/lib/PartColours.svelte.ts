@@ -10,6 +10,10 @@ export type PartColours = {
     frame: string;
     forks: string;
     rearForks: string;
+    rearForksTop: string;
+    rearForksBottom: string;
+    rearForksBracket: string;
+    rearForksArch: string;
     nuts: string;
     axel: string;
     tire: string;
@@ -50,6 +54,10 @@ export const partColours: PartColours = $state({
     frame: '#120F6C',
     forks: '#120F6C',
     rearForks: '#120F6C',
+    rearForksTop: '#120F6C',
+    rearForksBottom: '#120F6C',
+    rearForksBracket: '#120F6C',
+    rearForksArch: '#120F6C',
     nuts: '#171717',
     axel: '#e0e0e0',
     tire: '#171717',

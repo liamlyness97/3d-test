@@ -64,12 +64,6 @@
 
 	let currentPattern: string | null = $derived(findMatchingPattern(polePattern, patternMap));
 
-	$inspect(partColours.rearForks, hexToColourName[partColours.rearForks], 'rear forks');
-	$inspect(partColours.frame, hexToColourName[partColours.frame], 'frame');
-	$inspect(partColours.forks, hexToColourName[partColours.forks], 'forks');
-
-	console.log(data.poleCol);
-
 	function shareSetup() {
 		const frame = hexToColourName[partColours.frame];
 		const forks = hexToColourName[partColours.forks];

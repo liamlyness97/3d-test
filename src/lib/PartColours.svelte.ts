@@ -180,6 +180,26 @@ export const colourMap = $state({
     purple: '#5c1970'
 })
 
+const materialsBu = {
+    flamboyant: {},
+    polychromatic: {},
+    enamel: {},
+    pearl: {
+        roughness: 0.5,
+        metalness: 0.9,
+        transmission: 0.6,
+        transparent: true,
+        clearcoat: 1,
+        normalMap: true,
+        normalScale: [0.4, 0.6],
+        clearcoatRougness: 0.1,
+        colours: [
+            { name: 'Black Pearl', colour: '#000000', number: 34 },
+            { name: 'Rose Pearl', colour: '#DBACB6', number: 39 },
+        ]
+    }
+}
+
 export const hexToColourName = $state({
     '#025c8d': 'blue',
     '#248048': 'green',

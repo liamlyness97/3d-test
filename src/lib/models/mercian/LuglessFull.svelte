@@ -6,6 +6,7 @@
 	import { BackSide, DoubleSide } from 'three';
 	import { FlakesTexture } from 'three/examples/jsm/Addons.js';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+	import { partsConfig } from '$lib/Materials.svelte';
 
 	let { fallback, error, children, ref = $bindable(), ...props } = $props();
 
@@ -21,7 +22,7 @@
 	// Configure the texture
 	normalMap3.wrapS = THREE.RepeatWrapping;
 	normalMap3.wrapT = THREE.RepeatWrapping;
-	normalMap3.repeat.set(10, 6);
+	normalMap3.repeat.set(20, 20);
 	normalMap3.anisotropy = 16;
 </script>
 
@@ -372,21 +373,25 @@
 				color={partColours.frame}
 				roughness={0.5}
 				metalness={0.9}
+				transmission={0.6}
+				transparent={true}
 				clearcoat={1}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0.4, 0.6]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.forks}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.forks.colour}
+				roughness={partsConfig.forks.roughness}
+				metalness={partsConfig.forks.metalness}
+				transmission={partsConfig.forks.transmission}
+				transparent={partsConfig.forks.transparent}
+				clearcoat={partsConfig.forks.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				normalScale={partsConfig.forks.normalScale}
+				clearcoatRoughness={partsConfig.forks.clearcoatRougness}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -396,12 +401,14 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.forks}
+				color={partsConfig.forks.colour}
 				roughness={0.5}
 				metalness={0.9}
+				transmission={0.6}
+				transparent={true}
 				clearcoat={1}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0.4, 0.6]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>

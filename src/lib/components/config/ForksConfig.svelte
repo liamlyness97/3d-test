@@ -1,7 +1,9 @@
 <script lang="ts">
 	import type CC from 'camera-controls';
 	import { fly } from 'svelte/transition';
-	import { partColours } from '$lib/PartColours.svelte';
+	import { colourMap } from '$lib/PartColours.svelte';
+	import { color } from 'three/tsl';
+	import { materials, partsConfig } from '$lib/Materials.svelte';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 </script>
@@ -23,10 +25,21 @@
 	>
 		<iconify-icon icon="material-symbols-light:arrow-back"></iconify-icon>
 	</button>
-	{#each Object.keys(colourMap) as colour}
+	{#each materials.pearl.colours as colour}
 		<button
 			onclick={() => {
-				partColours.forks = colourMap[String(colour)];
+				partsConfig.forks.colour = colour.colour;
+				partsConfig.forks.colourName = colour.name;
+				partsConfig.forks.colourNumber = colour.number;
+				partsConfig.forks.roughness = materials.pearl.roughness;
+				partsConfig.forks.metalness = materials.pearl.metalness;
+				partsConfig.forks.transmission = materials.pearl.transmission;
+				partsConfig.forks.transparent = materials.pearl.transparent;
+				partsConfig.forks.clearcoat = materials.pearl.clearcoat;
+				partsConfig.forks.normalMap = materials.pearl.normalMap;
+				partsConfig.forks.normalScale = [...materials.pearl.normalScale];
+				partsConfig.forks.clearcoatRougness = materials.pearl.clearcoatRougness;
+				partsConfig.forks.materialType = 'pearl';
 				controls?.setPosition(0.8, 0.7, 0.8, true);
 				controls?.setTarget(0.2, 0.2, -0.2, true);
 				tab = 'forksConfig';
@@ -34,7 +47,7 @@
 			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Frame"
 		>
-			<div class="h-full w-full rounded-full bg-[colourMap[String(colour)]]"></div>
+			<div style="background: {colour.colour}" class="h-full w-full rounded-full"></div>
 		</button>
 	{/each}
 </div>

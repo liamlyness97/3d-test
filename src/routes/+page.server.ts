@@ -3,9 +3,9 @@ import type { PageServerLoad } from './$types';
 export const load = (async ({ url }) => {
     const params = url.searchParams;
 
-    const frameCol = params.get('frame');
-    const forksCol = params.get('forks');
-    const rearForksCol = params.get('rearForks');
+    const frameCol = `${params.get('frame')}`;
+    const forksCol = `${params.get('forks')}`;
+    const rearForksCol = `${params.get('rearForks')}`;
     const poleCol = `${decodeURIComponent(params.get('pole'))}`;
     const poleKeylineCol = `${decodeURIComponent(params.get('poleKeyline'))}`;
     const logoCol = `${decodeURIComponent(params.get('logo'))}`;

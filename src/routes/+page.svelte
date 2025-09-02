@@ -30,6 +30,8 @@
 
 	let { data } = $props();
 
+	console.log(data);
+
 	if (data.frameCol && colourMap[data.frameCol]) {
 		partColours.frame = colourMap[data.frameCol];
 	}
@@ -39,22 +41,22 @@
 	if (data.rearForksCol && colourMap[data.rearForksCol]) {
 		partColours.rearForks = colourMap[data.rearForksCol];
 	}
-	if (data.logoCol) {
+	if (data.logoCol != 'null') {
 		partColours.logo = data.logoCol;
 	}
-	if (data.logoKeylineCol) {
+	if (data.logoKeylineCol != 'null') {
 		partColours.logoKeyline = data.logoKeylineCol;
 	}
-	if (data.frontLogoCol) {
+	if (data.frontLogoCol != 'null') {
 		partColours.frontLogo = data.frontLogoCol;
 	}
-	if (data.frontLogoKeylineCol) {
+	if (data.frontLogoKeylineCol != 'null') {
 		partColours.frontLogoKeyline = data.frontLogoKeylineCol;
 	}
-	if (data.poleCol) {
+	if (data.poleCol != 'null') {
 		partColours.pole = data.poleCol;
 	}
-	if (data.poleKeylineCol) {
+	if (data.poleKeylineCol != 'null') {
 		partColours.poleKeyline = data.poleKeylineCol;
 	}
 

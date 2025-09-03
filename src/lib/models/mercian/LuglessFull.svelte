@@ -330,6 +330,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -347,6 +348,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -357,13 +359,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksArch}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksArch.colour}
+				roughness={partsConfig.rearForksArch.roughness}
+				metalness={partsConfig.rearForksArch.metalness}
+				transmission={partsConfig.rearForksArch.transmission}
+				transparent={partsConfig.rearForksArch.transparent}
+				clearcoat={partsConfig.rearForksArch.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksArch.normalScale}
+				clearcoatRoughness={partsConfig.rearForksArch.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -379,6 +384,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -386,6 +392,7 @@
 		<T.Mesh geometry={gltf.nodes.Cube.geometry} material={gltf.nodes.Cube.material} castShadow>
 			<T.MeshPhysicalMaterial
 				color={partsConfig.forks.colour}
+				needsUpdate={true}
 				roughness={partsConfig.forks.roughness}
 				metalness={partsConfig.forks.metalness}
 				transmission={partsConfig.forks.transmission}
@@ -404,13 +411,14 @@
 		>
 			<T.MeshPhysicalMaterial
 				color={partsConfig.forks.colour}
-				roughness={0.5}
-				metalness={0.9}
-				transmission={0.6}
-				transparent={true}
-				clearcoat={1}
+				needsUpdate={true}
+				roughness={partsConfig.forks.roughness}
+				metalness={partsConfig.forks.metalness}
+				transmission={partsConfig.forks.transmission}
+				transparent={partsConfig.forks.transparent}
+				clearcoat={partsConfig.forks.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.4, 0.6]}
+				normalScale={partsConfig.forks.normalScale}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -426,6 +434,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -439,7 +448,8 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
-				normalScale={partsConfig.frame.normalScale}
+				needsUpdate={true}
+				cale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
 		</T.Mesh>
@@ -452,6 +462,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -469,6 +480,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -479,13 +491,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksTop}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksTop.colour}
+				roughness={partsConfig.rearForksTop.roughness}
+				metalness={partsConfig.rearForksTop.metalness}
+				transmission={partsConfig.rearForksTop.transmission}
+				transparent={partsConfig.rearForksTop.transparent}
+				clearcoat={partsConfig.rearForksTop.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksTop.normalScale}
+				clearcoatRoughness={partsConfig.rearForksTop.clearcoatRougness}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -495,24 +510,30 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksTop}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksTop.colour}
+				roughness={partsConfig.rearForksTop.roughness}
+				metalness={partsConfig.rearForksTop.metalness}
+				transmission={partsConfig.rearForksTop.transmission}
+				transparent={partsConfig.rearForksTop.transparent}
+				clearcoat={partsConfig.rearForksTop.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksTop.normalScale}
+				clearcoatRoughness={partsConfig.rearForksTop.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.lug_2.geometry} material={gltf.nodes.lug_2.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBottom}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksTop.colour}
+				roughness={partsConfig.rearForksTop.roughness}
+				metalness={partsConfig.rearForksTop.metalness}
+				transmission={partsConfig.rearForksTop.transmission}
+				transparent={partsConfig.rearForksTop.transparent}
+				clearcoat={partsConfig.rearForksTop.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksTop.normalScale}
+				clearcoatRoughness={partsConfig.rearForksTop.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -521,13 +542,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 				side={DoubleSide}
 			/>
 		</T.Mesh>
@@ -537,13 +561,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -552,24 +579,30 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Cube_1.geometry} material={gltf.nodes.Cube_1.material} castShadow>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBottom}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBottom.colour}
+				roughness={partsConfig.rearForksBottom.roughness}
+				metalness={partsConfig.rearForksBottom.metalness}
+				transmission={partsConfig.rearForksBottom.transmission}
+				transparent={partsConfig.rearForksBottom.transparent}
+				clearcoat={partsConfig.rearForksBottom.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBottom.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBottom.clearcoatRougness}
 				side={BackSide}
 			/>
 		</T.Mesh>
@@ -579,13 +612,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForks}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -594,13 +630,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh
@@ -609,13 +648,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 				side={DoubleSide}
 			/>
 		</T.Mesh>
@@ -625,13 +667,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBracket}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBracket.colour}
+				roughness={partsConfig.rearForksBracket.roughness}
+				metalness={partsConfig.rearForksBracket.metalness}
+				transmission={partsConfig.rearForksBracket.transmission}
+				transparent={partsConfig.rearForksBracket.transparent}
+				clearcoat={partsConfig.rearForksBracket.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBracket.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBracket.clearcoatRougness}
 				side={DoubleSide}
 			/>
 		</T.Mesh>
@@ -641,13 +686,16 @@
 			castShadow
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.rearForksBottom}
-				roughness={0.5}
-				metalness={0.9}
-				clearcoat={1}
+				color={partsConfig.rearForksBottom.colour}
+				roughness={partsConfig.rearForksBottom.roughness}
+				metalness={partsConfig.rearForksBottom.metalness}
+				transmission={partsConfig.rearForksBottom.transmission}
+				transparent={partsConfig.rearForksBottom.transparent}
+				clearcoat={partsConfig.rearForksBottom.clearcoat}
 				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
-				clearcoatRoughness={0.1}
+				needsUpdate={true}
+				normalScale={partsConfig.rearForksBottom.normalScale}
+				clearcoatRoughness={partsConfig.rearForksBottom.clearcoatRougness}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Chain.geometry} material={gltf.nodes.Chain.material} />
@@ -665,6 +713,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>
@@ -682,6 +731,7 @@
 				transparent={partsConfig.frame.transparent}
 				clearcoat={partsConfig.frame.clearcoat}
 				normalMap={normalMap3}
+				needsUpdate={true}
 				normalScale={partsConfig.frame.normalScale}
 				clearcoatRoughness={partsConfig.frame.clearcoatRougness}
 			/>

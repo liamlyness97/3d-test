@@ -25,10 +25,10 @@ export type Parts = {
     frame: Material;
     forks: Material;
     rearForks: string;
-    rearForksTop: string;
-    rearForksBottom: string;
-    rearForksBracket: string;
-    rearForksArch: string;
+    rearForksTop: Material;
+    rearForksBottom: Material;
+    rearForksBracket: Material;
+    rearForksArch: Material;
     nuts: string;
     axel: string;
     tire: string;
@@ -71,10 +71,62 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     rearForks: 'string',
-    rearForksTop: 'string',
-    rearForksBottom: 'string',
-    rearForksBracket: 'string',
-    rearForksArch: 'string',
+    rearForksTop: {
+        colour: '#000000',
+        colourName: 'Black Pearl',
+        colourNumber: 34,
+        roughness: 0.5,
+        metalness: 0.9,
+        transmission: 0.6,
+        transparent: true,
+        clearcoat: 1,
+        normalMap: false,
+        normalScale: [0.4, 0.6],
+        clearcoatRougness: 0.1,
+        materialType: 'pearl'
+    },
+    rearForksBottom: {
+        colour: '#000000',
+        colourName: 'Black Pearl',
+        colourNumber: 34,
+        roughness: 0.5,
+        metalness: 0.9,
+        transmission: 0.6,
+        transparent: true,
+        clearcoat: 1,
+        normalMap: true,
+        normalScale: [0.4, 0.6],
+        clearcoatRougness: 0.1,
+        materialType: 'pearl'
+    },
+    rearForksBracket: {
+        colour: '#000000',
+        colourName: 'Black Pearl',
+        colourNumber: 34,
+        roughness: 0.5,
+        metalness: 0.9,
+        transmission: 0.6,
+        transparent: true,
+        clearcoat: 1,
+        normalMap: true,
+        normalScale: [0.4, 0.6],
+        clearcoatRougness: 0.1,
+        materialType: 'pearl'
+    },
+    rearForksArch: {
+        colour: '#000000',
+        colourName: 'Black Pearl',
+        colourNumber: 34,
+        roughness: 0.5,
+        metalness: 0.9,
+        transmission: 0.6,
+        transparent: true,
+        clearcoat: 1,
+        normalMap: true,
+        normalScale: [0.4, 0.6],
+        clearcoatRougness: 0.1,
+        materialType: 'pearl'
+    },
     nuts: 'string',
     axel: 'string',
     tire: 'string',
@@ -84,7 +136,38 @@ export const partsConfig: Parts = $state({
 export const materials = {
     flamboyant: {},
     polychromatic: {},
-    enamel: {},
+    enamel: {
+        roughness: 0.9,
+        metalness: 0.8,
+        transmission: 0.6,
+        transparent: false,
+        clearcoat: 0.8,
+        normalMap: false,
+        normalScale: [0, 0],
+        clearcoatRougness: 0.1,
+        colours: [
+            { name: 'Cream Enamel', colour: '#F6F4CE', number: 19 },
+            { name: 'Purple Enamel', colour: '#480075', number: 20 },
+            { name: 'Beige Enamel', colour: '#DBB676', number: 21 },
+            { name: 'White Enamel', colour: '#ffffff', number: 22 },
+            { name: 'Red Enamel', colour: '#960202', number: 23 },
+            { name: 'Light Blue Enamel', colour: '#267CED', number: 24 },
+            { name: 'Black Enamel', colour: '#000000', number: 25 },
+            { name: 'Yellow Enamel', colour: '#FBC628', number: 26 },
+            { name: 'Orange Enamel', colour: '#FA3E05', number: 27 },
+            { name: 'Royal Blue Enamel', colour: '#082263', number: 28 },
+            { name: 'Riviera Blue Enamel', colour: '#085CC9', number: 29 },
+            { name: 'Apple Green Enamel', colour: '#289401', number: 30 },
+            { name: 'Canary Yellow Enamel', colour: '#E2C400', number: 31 },
+            { name: 'British Racing Green Enamel', colour: '#08482C', number: 32 },
+            { name: 'Mauve Enamel', colour: '#C094DB', number: 33 },
+            { name: 'Bianchi Blue Enamel', colour: '#3dcfc2', number: 35 },
+            { name: 'Pink Enamel', colour: '#FD63C7', number: 36 },
+            { name: 'Chocolate Brown Enamel', colour: '#281306', number: 40 },
+            { name: 'French Blue Enamel', colour: '#315EA8', number: 41 },
+            { name: 'Maroon Enamel', colour: '#5B0909', number: 42 },
+        ]
+    },
     vinyl: {},
     pearl: {
         roughness: 0.5,

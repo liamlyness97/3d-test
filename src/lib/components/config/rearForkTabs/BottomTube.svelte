@@ -1,16 +1,12 @@
 <script lang="ts">
-	import type CC from 'camera-controls';
-	import { fly } from 'svelte/transition';
-	import { colourMap } from '$lib/PartColours.svelte';
-	import { color } from 'three/tsl';
 	import { materials, partsConfig } from '$lib/Materials.svelte';
+	import { fly } from 'svelte/transition';
 
-	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
+	let { subTab = $bindable(), controls = $bindable() } = $props();
 
 	let colourTab = $state('none');
 </script>
 
-<!-- Forks Config -->
 {#if colourTab == 'none'}
 	<div
 		class="fixed bottom-24 z-50 flex w-full justify-center gap-4"
@@ -19,10 +15,9 @@
 	>
 		<button
 			onclick={() => {
-				tab = 'default';
-				colourTab = 'none';
-				controls?.setPosition(0.1, 0.7, 1.5, true);
-				controls?.setTarget(0.2, 0.2, -0.9, true);
+				subTab = 'none';
+				controls?.setPosition(-0.7, 0.7, 0.8, true);
+				controls?.setTarget(0, 0.3, -0.2, true);
 			}}
 			class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1.25rem] font-medium duration-300 ease-out hover:-translate-y-1"
 			aria-label="Back"
@@ -75,21 +70,20 @@
 			{#each materials.enamel.colours as colour}
 				<button
 					onclick={() => {
-						partsConfig.forks.colour = colour.colour;
-						partsConfig.forks.colourName = colour.name;
-						partsConfig.forks.colourNumber = colour.number;
-						partsConfig.forks.roughness = materials.enamel.roughness;
-						partsConfig.forks.metalness = materials.enamel.metalness;
-						partsConfig.forks.transmission = materials.enamel.transmission;
-						partsConfig.forks.transparent = materials.enamel.transparent;
-						partsConfig.forks.clearcoat = materials.enamel.clearcoat;
-						partsConfig.forks.normalMap = false;
-						partsConfig.forks.normalScale = [0, 0];
-						partsConfig.forks.clearcoatRougness = materials.enamel.clearcoatRougness;
-						partsConfig.forks.materialType = 'enamel';
+						partsConfig.rearForksBottom.colour = colour.colour;
+						partsConfig.rearForksBottom.colourName = colour.name;
+						partsConfig.rearForksBottom.colourNumber = colour.number;
+						partsConfig.rearForksBottom.roughness = materials.enamel.roughness;
+						partsConfig.rearForksBottom.metalness = materials.enamel.metalness;
+						partsConfig.rearForksBottom.transmission = materials.enamel.transmission;
+						partsConfig.rearForksBottom.transparent = materials.enamel.transparent;
+						partsConfig.rearForksBottom.clearcoat = materials.enamel.clearcoat;
+						partsConfig.rearForksBottom.normalMap = false;
+						partsConfig.rearForksBottom.normalScale = [0, 0];
+						partsConfig.rearForksBottom.clearcoatRougness = materials.enamel.clearcoatRougness;
+						partsConfig.rearForksBottom.materialType = 'enamel';
 						controls?.setPosition(0.8, 0.7, 0.8, true);
 						controls?.setTarget(0.2, 0.2, -0.2, true);
-						tab = 'forksConfig';
 					}}
 					class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
 					aria-label="Frame"
@@ -122,27 +116,23 @@
 			{#each materials.pearl.colours as colour}
 				<button
 					onclick={() => {
-						partsConfig.forks.colour = colour.colour;
-						partsConfig.forks.colourName = colour.name;
-						partsConfig.forks.colourNumber = colour.number;
-						partsConfig.forks.roughness = materials.pearl.roughness;
-						partsConfig.forks.metalness = materials.pearl.metalness;
-						partsConfig.forks.transmission = materials.pearl.transmission;
-						partsConfig.forks.transparent = materials.pearl.transparent;
-						partsConfig.forks.clearcoat = materials.pearl.clearcoat;
-						partsConfig.forks.normalMap = true;
-						partsConfig.forks.normalScale = [
-							materials.pearl.normalScale[0],
-							materials.pearl.normalScale[1]
-						];
-						partsConfig.forks.clearcoatRougness = materials.pearl.clearcoatRougness;
-						partsConfig.forks.materialType = 'pearl';
+						partsConfig.rearForksBottom.colour = colour.colour;
+						partsConfig.rearForksBottom.colourName = colour.name;
+						partsConfig.rearForksBottom.colourNumber = colour.number;
+						partsConfig.rearForksBottom.roughness = materials.pearl.roughness;
+						partsConfig.rearForksBottom.metalness = materials.pearl.metalness;
+						partsConfig.rearForksBottom.transmission = materials.pearl.transmission;
+						partsConfig.rearForksBottom.transparent = materials.pearl.transparent;
+						partsConfig.rearForksBottom.clearcoat = materials.pearl.clearcoat;
+						partsConfig.rearForksBottom.normalMap = materials.pearl.normalMap;
+						partsConfig.rearForksBottom.normalScale = [...materials.pearl.normalScale];
+						partsConfig.rearForksBottom.clearcoatRougness = materials.pearl.clearcoatRougness;
+						partsConfig.rearForksBottom.materialType = 'pearl';
 						controls?.setPosition(0.8, 0.7, 0.8, true);
 						controls?.setTarget(0.2, 0.2, -0.2, true);
-						tab = 'forksConfig';
 					}}
 					class="flex h-10 w-10 -translate-y-0 items-center justify-center rounded-full border border-brandBlue bg-white text-[1rem] font-medium duration-300 ease-out hover:-translate-y-1"
-					aria-label="Frame"
+					aria-label="Rear Forks"
 				>
 					<div style="background: {colour.colour}" class="h-full w-full rounded-full"></div>
 				</button>

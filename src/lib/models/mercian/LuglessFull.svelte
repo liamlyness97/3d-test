@@ -37,12 +37,11 @@
 			visible={polePattern.poleMiddle}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -52,12 +51,11 @@
 			visible={polePattern.poleTopKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -67,12 +65,11 @@
 			visible={polePattern.poleBottomKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -82,12 +79,11 @@
 			visible={polePattern.poleTop}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -97,12 +93,11 @@
 			visible={polePattern.poleTopGap}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -112,12 +107,11 @@
 			visible={polePattern.poleBottom}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -127,12 +121,11 @@
 			visible={polePattern.poleBottomGap}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -142,12 +135,11 @@
 			visible={polePattern.poleTopGapTopKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -157,12 +149,11 @@
 			visible={polePattern.poleTopGapTopKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -172,12 +163,11 @@
 			visible={polePattern.poleTopGapBottomKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -187,12 +177,11 @@
 			visible={polePattern.poleBottomGapTopKeyline}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -200,12 +189,11 @@
 		<!-- Logo -->
 		<T.Mesh geometry={gltf.nodes.Mercian_Logo.geometry} material={gltf.nodes.Mercian_Logo.material}>
 			<T.MeshPhysicalMaterial
-				color={partColours.logo}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.logo}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -214,24 +202,22 @@
 			material={gltf.nodes.Mercian_Logo_Keyline.material}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.logoKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.logoKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
 		<!-- Barber Poll -->
 		<T.Mesh geometry={gltf.nodes.Pole_Keyline_1.geometry} material={gltf.materials['Material.001']}>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 				side={BackSide}
 				visible={polePattern.barberKeyline}
@@ -239,12 +225,11 @@
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Pole.geometry} material={gltf.materials.Material}>
 			<T.MeshPhysicalMaterial
-				color={partColours.pole}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.pole}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 				side={BackSide}
 				visible={polePattern.barber}
@@ -252,12 +237,11 @@
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Pole_Keyline_2.geometry} material={gltf.materials['Material.003']}>
 			<T.MeshPhysicalMaterial
-				color={partColours.poleKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.poleKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 				side={BackSide}
 				visible={polePattern.barberKeyline}
@@ -270,12 +254,11 @@
 			material={gltf.nodes.Mercian_Logo_Flip.material}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.logo}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.logo}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -284,12 +267,11 @@
 			material={gltf.nodes.Mercian_Logo_Keyline_Flip.material}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.logoKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.logoKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -300,23 +282,21 @@
 			material={gltf.materials['Material.005']}
 		>
 			<T.MeshPhysicalMaterial
-				color={partColours.frontLogoKeyline}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.frontLogoKeyline}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.M_Dupe001.geometry} material={gltf.materials['Material.006']}>
 			<T.MeshPhysicalMaterial
-				color={partColours.frontLogo}
-				roughness={0.5}
-				metalness={0.9}
+				color={partsConfig.frontLogo}
+				roughness={0.9}
+				metalness={0.8}
 				clearcoat={1}
-				normalMap={normalMap3}
-				normalScale={[0.15, 0.15]}
+				normalScale={[0, 0]}
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
@@ -781,7 +761,7 @@
 			material={gltf.nodes.Tire_Rear.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.tire} roughness={1} metalness={0.2} />
+			<T.MeshStandardMaterial color={partsConfig.tire} roughness={1} metalness={0.2} />
 		</T.Mesh>
 		<T.Mesh geometry={gltf.nodes.Wheel_Rear.geometry} material={gltf.nodes.Wheel_Rear.material} />
 		<T.Mesh
@@ -789,14 +769,14 @@
 			material={gltf.nodes.Front_Wheel_Lock.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.axel} roughness={0.036491} metalness={0.346457} />
+			<T.MeshStandardMaterial color={partsConfig.axel} roughness={0.036491} metalness={0.346457} />
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Tire_Front.geometry}
 			material={gltf.nodes.Tire_Front.material}
 			castShadow
 		>
-			<T.MeshStandardMaterial color={partColours.tire} roughness={1} metalness={0.2} />
+			<T.MeshStandardMaterial color={partsConfig.tire} roughness={1} metalness={0.2} />
 		</T.Mesh>
 		<T.Mesh
 			geometry={gltf.nodes.Wheel_Front.geometry}

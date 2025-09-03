@@ -1,3 +1,5 @@
+/* This file is being replaced by the Materials.svelte.ts file */
+
 import type { PatternMap, PolePattern } from "./components/helpers/PatternMatch";
 
 export type PartColours = {

@@ -2,6 +2,7 @@
 	import type CC from 'camera-controls';
 	import { fly } from 'svelte/transition';
 	import { partColours } from '$lib/PartColours.svelte';
+	import { partsConfig } from '$lib/Materials.svelte';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 	let subTab = $state('none');
@@ -74,7 +75,7 @@
 		>
 			<input
 				type="color"
-				bind:value={partColours.logo}
+				bind:value={partsConfig.logo}
 				name="logo"
 				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>
@@ -228,7 +229,7 @@
 		>
 			<input
 				type="color"
-				bind:value={partColours.logoKeyline}
+				bind:value={partsConfig.logoKeyline}
 				name="logoKeyline"
 				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>

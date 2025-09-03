@@ -36,12 +36,12 @@ export type Parts = {
 }
 
 export const partsConfig: Parts = $state({
-    logo: 'string',
-    logoKeyline: 'string',
-    frontLogo: 'string',
-    frontLogoKeyline: 'string',
-    pole: 'string',
-    poleKeyline: 'string',
+    logo: '#ffffff',
+    logoKeyline: '#025c8d',
+    frontLogo: '#ffffff',
+    frontLogoKeyline: '#025c8d',
+    pole: '#ffffff',
+    poleKeyline: '#025c8d',
     frame: {
         colour: '#120F6C',
         colourName: 'Electric Blue Pearl',
@@ -128,8 +128,8 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     nuts: 'string',
-    axel: 'string',
-    tire: 'string',
+    axel: '#e0e0e0',
+    tire: '#171717',
     lugs: 'string',
 })
 

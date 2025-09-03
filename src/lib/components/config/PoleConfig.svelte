@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import { partColours, patternMap, polePattern } from '$lib/PartColours.svelte';
 	import { updatePatternToMatch } from '../helpers/PatternMatch';
+	import { partsConfig } from '$lib/Materials.svelte';
 
 	let { tab = $bindable(), controls = $bindable() }: { tab: string; controls: CC } = $props();
 
@@ -161,7 +162,7 @@
 		>
 			<input
 				type="color"
-				bind:value={partColours.pole}
+				bind:value={partsConfig.pole}
 				name="logo"
 				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>
@@ -192,7 +193,7 @@
 		>
 			<input
 				type="color"
-				bind:value={partColours.poleKeyline}
+				bind:value={partsConfig.poleKeyline}
 				name="logo"
 				class="h-[5rem] w-[5rem] scale-125 cursor-pointer rounded-full bg-cover object-cover"
 			/>

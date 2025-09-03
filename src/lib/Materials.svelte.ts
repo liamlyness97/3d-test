@@ -43,8 +43,8 @@ export const partsConfig: Parts = $state({
     pole: 'string',
     poleKeyline: 'string',
     frame: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,
@@ -57,8 +57,8 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     forks: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,
@@ -72,8 +72,8 @@ export const partsConfig: Parts = $state({
     },
     rearForks: 'string',
     rearForksTop: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,
@@ -86,8 +86,8 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     rearForksBottom: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,
@@ -100,8 +100,8 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     rearForksBracket: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,
@@ -114,8 +114,8 @@ export const partsConfig: Parts = $state({
         materialType: 'pearl'
     },
     rearForksArch: {
-        colour: '#000000',
-        colourName: 'Black Pearl',
+        colour: '#120F6C',
+        colourName: 'Electric Blue Pearl',
         colourNumber: 34,
         roughness: 0.5,
         metalness: 0.9,

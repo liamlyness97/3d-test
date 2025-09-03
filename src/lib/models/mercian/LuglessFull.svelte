@@ -13,7 +13,7 @@
 	const dracoLoader = new DRACOLoader();
 	dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
 
-	const gltf = useGltf('/mercian-models/lugless-all-logos-full-poll.glb', {
+	const gltf = useGltf('mercian-models/lugless-all-logos-fixed-front-logo.glb', {
 		dracoLoader: dracoLoader
 	});
 
@@ -294,7 +294,11 @@
 			/>
 		</T.Mesh>
 		<!-- Front Logo -->
-		<T.Mesh geometry={gltf.nodes.Keyline_Dupe.geometry} material={gltf.materials['Material.005']}>
+
+		<T.Mesh
+			geometry={gltf.nodes.Keyline_Dupe001.geometry}
+			material={gltf.materials['Material.005']}
+		>
 			<T.MeshPhysicalMaterial
 				color={partColours.frontLogoKeyline}
 				roughness={0.5}
@@ -305,7 +309,7 @@
 				clearcoatRoughness={0.1}
 			/>
 		</T.Mesh>
-		<T.Mesh geometry={gltf.nodes.M_Dupe.geometry} material={gltf.materials['Material.006']}>
+		<T.Mesh geometry={gltf.nodes.M_Dupe001.geometry} material={gltf.materials['Material.006']}>
 			<T.MeshPhysicalMaterial
 				color={partColours.frontLogo}
 				roughness={0.5}
